@@ -2,6 +2,54 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 4, ../sass/import/_global.scss */
+html {
+  background: white;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* line 9, ../sass/import/_global.scss */
+.content {
+  margin-top: 70px;
+}
+
+/* line 12, ../sass/import/_global.scss */
+.container {
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+}
+
+/* line 18, ../sass/import/_global.scss */
+.carouss {
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+}
+/* line 22, ../sass/import/_global.scss */
+.carouss img {
+  width: 100%;
+}
+/* line 25, ../sass/import/_global.scss */
+.carouss .black-bandeau {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 200px;
+  bottom: 0;
+  z-index: 10;
+  position: absolute;
+}
+/* line 32, ../sass/import/_global.scss */
+.carouss .black-bandeau p, .carouss .black-bandeau h1 {
+  text-align: center;
+  color: white;
+  line-height: 200px;
+  font-size: 20px;
+}
+
 /* line 5, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,7 +115,390 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 1, ../sass/import/_header.scss */
-html {
-  color: #7eff6f;
+/* line 2, ../sass/import/_header.scss */
+header {
+  background-color: white;
+  color: #82868f;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+/* line 11, ../sass/import/_header.scss */
+header .navigation {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+header .navigation:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 14, ../sass/import/_header.scss */
+header div {
+  display: inline-block;
+}
+/* line 18, ../sass/import/_header.scss */
+header a {
+  color: #82868f;
+  font-style: none;
+  text-decoration: none;
+}
+/* line 22, ../sass/import/_header.scss */
+header a:hover {
+  text-decoration: none;
+  color: #000;
+}
+/* line 27, ../sass/import/_header.scss */
+header ul li {
+  display: inline-block;
+}
+/* line 30, ../sass/import/_header.scss */
+header .logo {
+  font-size: 25px;
+  line-height: 70px;
+  padding-left: 70px;
+}
+/* line 38, ../sass/import/_header.scss */
+header .nav-right {
+  float: right;
+  padding-right: 115px;
+  line-height: 70px;
+}
+/* line 42, ../sass/import/_header.scss */
+header .nav-right li {
+  height: 30px;
+}
+/* line 46, ../sass/import/_header.scss */
+header .nav-right a {
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  margin-right: 25px;
+  font-size: 18px;
+  width: 120px;
+}
+/* line 53, ../sass/import/_header.scss */
+header .nav-right a:hover, header .nav-right a:focus {
+  text-decoration: none;
+  background-color: #44e1ff;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 5, ../sass/import/_index.scss */
+.content-index .presentation {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding-bottom: 40px;
+  z-index: 8;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-index .presentation:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 13, ../sass/import/_index.scss */
+.content-index .presentation article {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: justify;
+  display: inline-block;
+  width: 30%;
+  padding: 80px 30px;
+  color: #82868f;
+}
+/* line 22, ../sass/import/_index.scss */
+.content-index .presentation article h2 {
+  padding: 15px 0;
+  font-size: 20px;
+  color: black;
+}
+/* line 29, ../sass/import/_index.scss */
+.content-index .projets {
+  width: 100%;
+  background: #f2f2f2;
+  padding: 80px;
+  text-align: center;
+  margin: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 38, ../sass/import/_index.scss */
+.content-index .projets:before {
+  content: '';
+  display: block;
+  background: #f2f2f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -moz-transform-origin: 100% 100% 0;
+  -webkit-transform-origin: 100% 100% 0;
+  transform-origin: 100% 100% 0;
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
+  -webkit-transform: skewY(2deg);
+  transform: skewY(2deg);
+  z-index: 1;
+}
+/* line 52, ../sass/import/_index.scss */
+.content-index .projets:after {
+  content: '';
+  display: block;
+  background: #f2f2f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -moz-transform-origin: 100% 100% 0;
+  -webkit-transform-origin: 100% 100% 0;
+  transform-origin: 100% 100% 0;
+  -moz-transform: skewY(-2deg);
+  -ms-transform: skewY(-2deg);
+  -webkit-transform: skewY(-2deg);
+  transform: skewY(-2deg);
+  z-index: 2;
+}
+/* line 65, ../sass/import/_index.scss */
+.content-index .projets .projets-list {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-index .projets .projets-list:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 68, ../sass/import/_index.scss */
+.content-index .projets .case-projet {
+  position: relative;
+  z-index: 3;
+  width: 40%;
+  display: inline-block;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+/* line 77, ../sass/import/_index.scss */
+.content-index .projets .case-projet img {
+  width: 100%;
+}
+/* line 81, ../sass/import/_index.scss */
+.content-index .projets .case-projet .legende-projet {
+  margin-top: -2px;
+  background: white;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  color: #82868f;
+}
+/* line 94, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires {
+  background: #4c4c4c;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 80px;
+  text-align: center;
+  position: relative;
+}
+/* line 101, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires:after {
+  content: '';
+  display: block;
+  background: #4c4c4c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
+  -webkit-transform: skewY(2deg);
+  transform: skewY(2deg);
+  z-index: 1;
+}
+/* line 115, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 117, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+  z-index: 3;
+}
+/* line 124, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
+  color: white;
+  font-size: 20px;
+}
+/* line 129, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
+  height: 100%;
+  margin-right: 40px;
+}
+/* line 132, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .partenaires img {
+  margin-top: 30px;
+  width: 100%;
+}
+/* line 138, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact form {
+  margin-left: 40px;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: left;
+}
+/* line 143, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #82868f;
+}
+/* line 150, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact form textarea {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px;
+}
+/* line 156, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit'] {
+  width: 100px;
+  background-color: #44e1ff;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  float: right;
+}
+/* line 164, ../sass/import/_index.scss */
+.content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit']:hover {
+  background-color: #00badd;
+}
+
+/* line 1, ../sass/import/_projet.scss */
+.content-projet {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 4, ../sass/import/_projet.scss */
+.content-projet .presentation-projet {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding-bottom: 40px;
+}
+/* line 11, ../sass/import/_projet.scss */
+.content-projet .presentation-projet article {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: justify;
+  display: inline-block;
+  width: 100%;
+  padding: 80px;
+  color: #82868f;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-projet .presentation-projet article:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 20, ../sass/import/_projet.scss */
+.content-projet .presentation-projet article h2 {
+  padding: 15px 0;
+  font-size: 20px;
+  color: black;
+}
+/* line 27, ../sass/import/_projet.scss */
+.content-projet .bloc-categorie {
+  background: #4c4c4c;
+}
+/* line 30, ../sass/import/_projet.scss */
+.content-projet .categorie {
+  padding: 80px;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-projet .categorie:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 34, ../sass/import/_projet.scss */
+.content-projet .categorie a {
+  width: 300px;
+  height: 300px;
+  background: #f2f2f2;
+  display: inline-block;
+  text-decoration: none;
+  color: #82868f;
+  font-size: 20px;
+}
+/* line 42, ../sass/import/_projet.scss */
+.content-projet .categorie a:hover {
+  text-decoration: none;
+}
+/* line 45, ../sass/import/_projet.scss */
+.content-projet .categorie a h2 {
+  line-height: 300px;
+}
+/* line 48, ../sass/import/_projet.scss */
+.content-projet .categorie a:not(:last-child) {
+  margin-right: 100px;
 }

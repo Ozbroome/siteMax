@@ -2,6 +2,12 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
+@import "import/colors";
+@import "compass/css3/box-sizing";
+@import "compass";
+@import "susy";
+@import "import/global";
 @import "compass/reset";
 @import "import/header";
+@import "import/index";
+@import "import/projet";

@@ -13,7 +13,26 @@
 
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    <div class="container">
+        <header>
+
+            <!-- Navigation
+            ================================================== -->
+<nav class="navigation">
+    <div class="logo">
+        <a href="/">Maxime Raguideau</a>
+    </div>
+    <div class="nav-right">
+        <ul class="navigation-liens-droite">
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Projets</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+        </header>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </body>
+    </div>
 </html>

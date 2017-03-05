@@ -1,0 +1,175 @@
+
+
+.content-index{
+
+  .presentation{
+    @include container(1160px);
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+    background: white;
+  padding-bottom: 40px;
+    z-index:8;
+      article{
+
+        @include box-sizing();
+        text-align: justify;
+        display: inline-block;
+        width: 30%;
+        padding: 80px 30px;
+        color: $text-gris;
+
+        h2{
+          padding: 15px 0;
+          font-size: 20px;
+          color:black;
+        }
+      }
+    }
+  .projets{
+
+    width: 100%;
+    background: $bloc-gris-clair;
+    padding: 80px;
+    text-align: center;
+    margin: auto;
+    @include box-sizing();
+    position: relative;
+    &:before{
+      content:'';
+      display: block;
+      background: $bloc-gris-clair;
+      position: absolute;
+      top:0;
+      left:0;
+      right: 0;
+      bottom:0;
+      @include transform-origin(100%,100%,0,0);
+      @include transform(skewY(2deg));
+      z-index: 1;
+
+    }
+    &:after{
+      content:'';
+      display: block;
+      background: $bloc-gris-clair;
+      position: absolute;
+      top:0;
+      left:0;
+      right: 0;
+      bottom:0;
+      @include transform-origin(100%,100%,0,0);
+      @include transform(skewY(-2deg));
+      z-index:2;
+    }
+    .projets-list{
+      @include container(1160px);
+    }
+    .case-projet{
+
+      position: relative;
+      z-index:3;
+      width: 40%;
+      display: inline-block;
+      margin-right: 40px;
+      margin-left: 40px;
+
+      img{
+        width: 100%;
+      }
+
+      .legende-projet{
+        margin-top: -2px;
+        background: white;
+        height: 100px;
+        text-align: center;
+        line-height:100px;
+        font-size: 20px;
+        color: $text-gris;
+      }
+    }
+
+  }
+
+  .bloc-contact-partenaires{
+    background: $bloc-gris-fonce;
+    @include box-sizing();
+    padding: 80px;
+  text-align: center;
+    position: relative;
+
+    &:after{
+      content:'';
+      display: block;
+      background: $bloc-gris-fonce;
+      position: absolute;
+      top:0;
+      left:0;
+      right: 0;
+      bottom:0;
+      @include transform-origin(0,0);
+      @include transform(skewY(2deg));
+      z-index:1;
+    }
+
+    .contact-partenaires{
+      @include container(1160px);
+      .contact,.partenaires{
+        position: relative;
+        @include box-sizing();
+        display: inline-block;
+        vertical-align: top;
+        width: 35%;
+        z-index: 3;
+        h2{
+          color:white;
+          font-size: 20px;
+        }
+      }
+      .partenaires{
+        height: 100%;
+        margin-right: 40px;
+        img{
+          margin-top: 30px;
+          width: 100%;
+        }
+      }
+      .contact{
+        form{
+          margin-left: 40px;
+          width: 100%;
+          @include box-sizing();
+          text-align: left;
+          input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 30px;
+            @include box-sizing();
+            color: $text-gris;
+          }
+          textarea{
+            @include box-sizing();
+            margin-top: 30px;
+            width: 100%;
+            padding:10px;
+          }
+          input[type='submit']{
+            width: 100px;
+            background-color: #44e1ff;
+            border:none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            float: right;
+            &:hover{
+              background-color: darken(#44e1ff,20%);
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  }
+

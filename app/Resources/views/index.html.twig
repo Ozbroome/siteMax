@@ -1,5 +1,61 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<p>{{ bonjour }}, comment ça va ?</p>
+    <div class="content content-index">
+        <div class="carouss">
+            <img src="{{ asset('img/1.jpg') }}" alt="">
+            <div class="black-bandeau">
+                <p>
+                    “Du 10km à l'Ironman, de la balade à la traversée des Pyrennées à pieds, il n'y a finalement qu'un pas... ou deux.”</p>
+            </div>
+        </div>
+        <div class="presentation">
+            <article class="presentation-article">
+                <h2>A propos de moi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae deleniti eum ex impedit ipsum iure maxime, quaerat repellendus sequi? Aliquid debitis doloribus laboriosam nesciunt nobis omnis praesentium quas similique.</p>
+            </article>
+            <article class="presentation-article">
+                <h2>Pourquoi ce site</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio iure labore laboriosam libero nesciunt perferendis praesentium repellendus rerum sit veritatis vero, vitae. Dolor excepturi nesciunt omnis recusandae tempore vero!</p>
+            </article>
+            <article class="presentation-article">
+                <h2>Ce que vous allez y trouver</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex expedita qui reiciendis rerum similique vero, voluptate? Animi aut harum maxime, nobis numquam optio reiciendis tempore vel, voluptate voluptates voluptatum.</p>
+            </article>
+        </div>
+        <div class="projets">
+            <div class="projets-list">
+            {%   for projet in projets  %}
+                <a href="{{ asset("projet/"~projet.id) }}">
+                    <div class="case-projet">
+                    <img src="{{ asset(projet.image ) }}" alt="">
+                    <div class="legende-projet">
+                        <p>{{ projet.titre }}</p>
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bloc-contact-partenaires">
+            <div class="contact-partenaires">
+                <div class="partenaires">
+                    <h2>Mes partenaires</h2>
+                    <img src="{{ asset('img/def.jpg') }}" alt="">
+                    <img src="{{ asset('img/soap.jpg') }}" alt="">
+                </div>
+                <div class="contact">
+                    <h2>Me contacter</h2>
+                    <form action="">
+                        <div><input type="text" placeholder="Entrez votre nom et prénom ici"></div>
+                        <div><input type="text" placeholder="Entrez votre adresse mail ici"></div>
+                        <div><textarea name="message" id="" rows="10" placeholder="Entrez votre message ici"></textarea></div>
+                        <div><input type="submit"></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
 
 {% endblock %}
