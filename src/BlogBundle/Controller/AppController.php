@@ -23,7 +23,7 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/projet/{slug}")
+     * @Route("/projet/{slug}", requirements={"slug": "\d+"})
      */
     public function projetAction($slug,Request $request)
     {
@@ -41,8 +41,14 @@ class AppController extends Controller
     /**
      * @Route("/projet/categorie/{slug}")
      */
-    public function categorieAction()
+    public function categorieAction($slug,Request $request)
     {
+
+        $articles = $this->getDoctrine()->getRepository('BlogBundle:Articles')->findByCategorie($slug);
+
+        return $this->render(':projet:categorie.html.twig', [
+            'articles' => $articles,
+        ]);
 
     }
 

@@ -12,10 +12,9 @@
     z-index:8;
       article{
 
-        @include box-sizing();
         text-align: justify;
         display: inline-block;
-        width: 30%;
+        @include span(4 of 12);
         padding: 80px 30px;
         color: $text-gris;
 
@@ -27,13 +26,10 @@
       }
     }
   .projets{
-
-    width: 100%;
     background: $bloc-gris-clair;
     padding: 80px;
     text-align: center;
     margin: auto;
-    @include box-sizing();
     position: relative;
     &:before{
       content:'';
@@ -67,12 +63,10 @@
     }
     .case-projet{
 
+      @include span(6 of 12);
       position: relative;
       z-index:3;
-      width: 40%;
       display: inline-block;
-      margin-right: 40px;
-      margin-left: 40px;
 
       img{
         width: 100%;
@@ -93,8 +87,8 @@
 
   .bloc-contact-partenaires{
     background: $bloc-gris-fonce;
-    @include box-sizing();
-    padding: 80px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   text-align: center;
     position: relative;
 
@@ -116,10 +110,9 @@
       @include container(1160px);
       .contact,.partenaires{
         position: relative;
-        @include box-sizing();
         display: inline-block;
         vertical-align: top;
-        width: 35%;
+        @include span(6 of 12);
         z-index: 3;
         h2{
           color:white;
@@ -128,7 +121,7 @@
       }
       .partenaires{
         height: 100%;
-        margin-right: 40px;
+
         img{
           margin-top: 30px;
           width: 100%;
@@ -136,19 +129,15 @@
       }
       .contact{
         form{
-          margin-left: 40px;
           width: 100%;
-          @include box-sizing();
           text-align: left;
           input{
             width: 100%;
             padding: 10px;
             margin-top: 30px;
-            @include box-sizing();
             color: $text-gris;
           }
           textarea{
-            @include box-sizing();
             margin-top: 30px;
             width: 100%;
             padding:10px;

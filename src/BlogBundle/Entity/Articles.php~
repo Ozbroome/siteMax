@@ -43,6 +43,13 @@ class Articles
     private $date;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Categories")
      * @ORM\JoinColumn(nullable=false)
@@ -156,4 +163,3 @@ class Articles
         return $this->categorie;
     }
 }
-

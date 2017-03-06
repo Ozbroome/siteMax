@@ -1,5 +1,4 @@
 .content-projet{
-  @include box-sizing();
 
   .presentation-projet{
 
@@ -10,7 +9,6 @@
     padding-bottom: 40px;
     article{
       @include container(1160px);
-      @include box-sizing();
       text-align: justify;
       display: inline-block;
       width: 100%;
@@ -28,14 +26,16 @@
     background: $bloc-gris-fonce;
   }
   .categorie{
-    padding: 80px;
     @include container(1160px);
     text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
     a{
-      width: 300px;
-      height: 300px;
+      display: block;
+      @include box-sizing();
+     @include span(4 of 12);
+      height: 250px;
       background: $bloc-gris-clair;
-      display: inline-block;
       text-decoration: none;
       color: $text-gris;
       font-size: 20px;
@@ -43,11 +43,9 @@
         text-decoration: none;
       }
       h2{
-        line-height: 300px;
+        line-height: 250px;
       }
-    &:not(:last-child){
-      margin-right: 100px;
-    }
+
     }
   }
 }
