@@ -85,6 +85,9 @@ class ProjetController extends Controller
         $editForm = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $editForm->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('BlogBundle:Categories')->findAll();
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
@@ -95,6 +98,7 @@ class ProjetController extends Controller
             'projet' => $projet,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'categories' => $categories,
         ));
     }
 

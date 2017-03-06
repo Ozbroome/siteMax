@@ -43,6 +43,10 @@ class Projet
     private $image;
 
 
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
     /**
      * Get id

@@ -45,9 +45,11 @@ class Categories
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Projet")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="projet_id", referencedColumnName="id", nullable=false)
      */
     private $projet;
+
+
 
     /**
      * Get id

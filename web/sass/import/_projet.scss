@@ -30,20 +30,28 @@
     text-align: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    a{
-      display: block;
-      @include box-sizing();
-     @include span(4 of 12);
-      height: 250px;
+    .case-categorie{
+      @include span(4 of 12);
       background: $bloc-gris-clair;
+      height: 200px;
+      line-height: 200px;
+      ul li{
+        display: inline;
+        &:last-child a{
+          font-size: small;
+          color:red;
+        }
+      }
+    }
+
+    a{
+
+
       text-decoration: none;
       color: $text-gris;
       font-size: 20px;
       &:hover{
         text-decoration: none;
-      }
-      h2{
-        line-height: 250px;
       }
 
     }
