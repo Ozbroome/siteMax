@@ -1,7 +1,7 @@
 @import "susy";
 $susy: (
+        container:1160px,
         columns: 12,
-        gutters: 30px/100px,
         math: fluid,
         output: float,
         gutter-position: split,

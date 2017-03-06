@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Projet controller.
  *
- * @Route("projet")
+ * @Route("/admin/projet")
  */
 class ProjetController extends Controller
 {
@@ -26,7 +26,7 @@ class ProjetController extends Controller
 
         $projets = $em->getRepository('BlogBundle:Projet')->findAll();
 
-        return $this->render('projet/index.html.twig', array(
+        return $this->render(':admin/projet:index.html.twig', array(
             'projets' => $projets,
         ));
     }
@@ -51,7 +51,7 @@ class ProjetController extends Controller
             return $this->redirectToRoute('projet_show', array('id' => $projet->getId()));
         }
 
-        return $this->render('projet/new.html.twig', array(
+        return $this->render(':admin/projet:new.html.twig', array(
             'projet' => $projet,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class ProjetController extends Controller
     {
         $deleteForm = $this->createDeleteForm($projet);
 
-        return $this->render('projet/show.html.twig', array(
+        return $this->render(':admin/projet:show.html.twig', array(
             'projet' => $projet,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class ProjetController extends Controller
             return $this->redirectToRoute('projet_edit', array('id' => $projet->getId()));
         }
 
-        return $this->render('projet/edit.html.twig', array(
+        return $this->render(':admin/projet:edit.html.twig', array(
             'projet' => $projet,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

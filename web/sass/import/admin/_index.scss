@@ -1,0 +1,26 @@
+
+.content-index{
+
+  .projets-list{
+  h2{
+    color: $text-gris;
+    z-index: 3;
+    padding: 30px;
+    a{
+      z-index: 3;
+      text-decoration: none;
+      color: $text-gris;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+    a {
+      text-decoration: none;
+      color: $text-gris;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}

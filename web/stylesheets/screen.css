@@ -226,10 +226,10 @@ header .nav-right a:hover, header .nav-right a:focus {
 .content-index .presentation article {
   text-align: justify;
   display: inline-block;
-  width: 31.41026%;
+  width: 31.66667%;
   float: left;
-  margin-left: 0.96154%;
-  margin-right: 0.96154%;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
   padding: 80px 30px;
   color: #82868f;
 }
@@ -290,6 +290,9 @@ header .nav-right a:hover, header .nav-right a:focus {
   max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 3;
+  text-align: center;
 }
 /* line 12, ../sass/import/susy/output/support/_clearfix.scss */
 .content-index .projets .projets-list:after {
@@ -297,21 +300,22 @@ header .nav-right a:hover, header .nav-right a:focus {
   display: block;
   clear: both;
 }
-/* line 64, ../sass/import/_index.scss */
+/* line 67, ../sass/import/_index.scss */
 .content-index .projets .case-projet {
-  width: 48.07692%;
+  width: 48.33333%;
   float: left;
-  margin-left: 0.96154%;
-  margin-right: 0.96154%;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
   position: relative;
   z-index: 3;
   display: inline-block;
+  margin-bottom: 30px;
 }
-/* line 71, ../sass/import/_index.scss */
+/* line 74, ../sass/import/_index.scss */
 .content-index .projets .case-projet img {
   width: 100%;
 }
-/* line 75, ../sass/import/_index.scss */
+/* line 78, ../sass/import/_index.scss */
 .content-index .projets .case-projet .legende-projet {
   margin-top: -2px;
   background: white;
@@ -321,7 +325,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   font-size: 20px;
   color: #82868f;
 }
-/* line 88, ../sass/import/_index.scss */
+/* line 91, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires {
   background: #4c4c4c;
   padding-top: 80px;
@@ -329,7 +333,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   text-align: center;
   position: relative;
 }
-/* line 95, ../sass/import/_index.scss */
+/* line 98, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires:after {
   content: '';
   display: block;
@@ -349,7 +353,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   transform: skewY(2deg);
   z-index: 1;
 }
-/* line 109, ../sass/import/_index.scss */
+/* line 112, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires {
   max-width: 1160px;
   margin-left: auto;
@@ -361,50 +365,51 @@ header .nav-right a:hover, header .nav-right a:focus {
   display: block;
   clear: both;
 }
-/* line 111, ../sass/import/_index.scss */
+/* line 114, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 48.07692%;
+  width: 48.33333%;
   float: left;
-  margin-left: 0.96154%;
-  margin-right: 0.96154%;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
   z-index: 3;
 }
-/* line 117, ../sass/import/_index.scss */
+/* line 120, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
   color: white;
   font-size: 20px;
 }
-/* line 122, ../sass/import/_index.scss */
+/* line 125, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   height: 100%;
 }
-/* line 125, ../sass/import/_index.scss */
+/* line 128, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires img {
   margin-top: 30px;
-  width: 100%;
+  max-height: 300px;
+  max-width: 100%;
 }
-/* line 131, ../sass/import/_index.scss */
+/* line 135, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form {
   width: 100%;
   text-align: left;
 }
-/* line 134, ../sass/import/_index.scss */
+/* line 138, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input {
   width: 100%;
   padding: 10px;
   margin-top: 30px;
   color: #82868f;
 }
-/* line 140, ../sass/import/_index.scss */
+/* line 144, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form textarea {
   margin-top: 30px;
   width: 100%;
   padding: 10px;
 }
-/* line 145, ../sass/import/_index.scss */
+/* line 149, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit'] {
   width: 100px;
   background-color: #44e1ff;
@@ -414,7 +419,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   cursor: pointer;
   float: right;
 }
-/* line 153, ../sass/import/_index.scss */
+/* line 157, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit']:hover {
   background-color: #00badd;
 }
@@ -475,10 +480,10 @@ header .nav-right a:hover, header .nav-right a:focus {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 31.41026%;
+  width: 31.66667%;
   float: left;
-  margin-left: 0.96154%;
-  margin-right: 0.96154%;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
   height: 250px;
   background: #f2f2f2;
   text-decoration: none;
@@ -492,4 +497,30 @@ header .nav-right a:hover, header .nav-right a:focus {
 /* line 45, ../sass/import/_projet.scss */
 .content-projet .categorie a h2 {
   line-height: 250px;
+}
+
+/* line 5, ../sass/import/admin/_index.scss */
+.content-index .projets-list h2 {
+  color: #82868f;
+  z-index: 3;
+  padding: 30px;
+}
+/* line 9, ../sass/import/admin/_index.scss */
+.content-index .projets-list h2 a {
+  z-index: 3;
+  text-decoration: none;
+  color: #82868f;
+}
+/* line 13, ../sass/import/admin/_index.scss */
+.content-index .projets-list h2 a:hover {
+  text-decoration: none;
+}
+/* line 18, ../sass/import/admin/_index.scss */
+.content-index .projets-list a {
+  text-decoration: none;
+  color: #82868f;
+}
+/* line 21, ../sass/import/admin/_index.scss */
+.content-index .projets-list a:hover {
+  text-decoration: none;
 }

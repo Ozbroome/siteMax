@@ -3,7 +3,7 @@
 .content-index{
 
   .presentation{
-    @include container(1160px);
+    @include container();
     width: 100%;
     margin:0 auto;
     text-align: center;
@@ -59,7 +59,10 @@
       z-index:2;
     }
     .projets-list{
-      @include container(1160px);
+      @include container();
+      position: relative;
+      z-index: 3;
+      text-align: center;
     }
     .case-projet{
 
@@ -67,7 +70,7 @@
       position: relative;
       z-index:3;
       display: inline-block;
-
+      margin-bottom: 30px;
       img{
         width: 100%;
       }
@@ -107,7 +110,7 @@
     }
 
     .contact-partenaires{
-      @include container(1160px);
+      @include container();
       .contact,.partenaires{
         position: relative;
         display: inline-block;
@@ -124,7 +127,8 @@
 
         img{
           margin-top: 30px;
-          width: 100%;
+          max-height:300px;
+          max-width: 100%;
         }
       }
       .contact{
