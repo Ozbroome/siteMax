@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin.html.twig' %}
 
 {% block body %}
 
@@ -31,7 +31,7 @@
                 {%   for projet in projets  %}
 
                         <div class="case-projet">
-                            <a href="{{ path('projet_show', { 'id': projet.id }) }}">
+                            <a href="{{ path('projet_edit', { 'id': projet.id }) }}">
                             <img src="{{ asset(projet.image ) }}" alt="">
                             <div class="legende-projet">
                                 <p>{{ projet.titre }}</p>

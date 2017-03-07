@@ -18,7 +18,8 @@
         <div class="categorie">
 
         {% for categorie in categories %}
-            <a href="{{ asset('projet/categorie/'~categorie.id) }}">
+
+            <a href="{{ asset('projet/'~categorie.projet.id~'/categorie/'~categorie.id) }}">
                 <div class="case-categorie">
                     <h2>{{ categorie.titre }}</h2>
                 </div>

@@ -10,7 +10,7 @@
         <!--[if IE]>
         <link href="{{ asset('stylesheets/ie.css') }} " media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
-
+        {% block bootstrap %}{% endblock %}
     </head>
     <body>
     <div class="container">
@@ -20,7 +20,7 @@
             ================================================== -->
 <nav class="navigation">
     <div class="logo">
-        <a href="/">Maxime Raguideau</a>
+        <a href="{% block retour %}/{% endblock %}">Maxime Raguideau</a>
     </div>
     <div class="nav-right">
         <ul class="navigation-liens-droite">
@@ -32,6 +32,12 @@
 </nav>
         </header>
             {% block body %}{% endblock %}
+        <footer>
+            <div class="footer">
+<p>Copyright © 2017 Maxime Raguideau. All rights reserved.</p>
+            </div>
+        </footer>
+
             {% block javascripts %}{% endblock %}
         </body>
     </div>

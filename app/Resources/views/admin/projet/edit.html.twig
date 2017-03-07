@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin.html.twig' %}
 
 {% block body %}
 
@@ -22,7 +22,7 @@
         <div class="bloc-categorie">
 
             <div class="categorie">
-                <h2><a href="{{ path('admin_categories_new') }}">Créer une nouvelle catégorie</a></h2>
+                <h2><a href="{{ path('admin_categories_new',{'id':projet.id}) }}">Créer une nouvelle catégorie</a></h2>
                 {% for categorie in categories %}
                     <div class="case-categorie">
                         <ul>

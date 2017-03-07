@@ -87,31 +87,48 @@ a:hover {
 html {
   background: white;
   position: relative;
+  height: 100%;
 }
 
-/* line 22, ../sass/import/_global.scss */
+/* line 23, ../sass/import/_global.scss */
+body {
+  height: 100%;
+}
+
+/* line 27, ../sass/import/_global.scss */
 .content {
-  margin-top: 70px;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
-/* line 25, ../sass/import/_global.scss */
+/* line 32, ../sass/import/_global.scss */
 .container {
+  min-height: 100%;
   margin: 0 auto;
   z-index: 10;
   position: relative;
 }
 
-/* line 31, ../sass/import/_global.scss */
+/* line 38, ../sass/import/_global.scss */
 .carouss {
   margin-top: 0;
   padding-top: 0;
   position: relative;
 }
-/* line 35, ../sass/import/_global.scss */
+/* line 42, ../sass/import/_global.scss */
 .carouss img {
   width: 100%;
 }
-/* line 38, ../sass/import/_global.scss */
+/* line 45, ../sass/import/_global.scss */
 .carouss .black-bandeau {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -120,7 +137,7 @@ html {
   z-index: 10;
   position: absolute;
 }
-/* line 45, ../sass/import/_global.scss */
+/* line 52, ../sass/import/_global.scss */
 .carouss .black-bandeau p, .carouss .black-bandeau h1 {
   text-align: center;
   color: white;
@@ -333,27 +350,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   text-align: center;
   position: relative;
 }
-/* line 98, ../sass/import/_index.scss */
-.content-index .bloc-contact-partenaires:after {
-  content: '';
-  display: block;
-  background: #4c4c4c;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  -moz-transform: skewY(2deg);
-  -ms-transform: skewY(2deg);
-  -webkit-transform: skewY(2deg);
-  transform: skewY(2deg);
-  z-index: 1;
-}
-/* line 112, ../sass/import/_index.scss */
+/* line 99, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires {
   max-width: 1160px;
   margin-left: auto;
@@ -365,7 +362,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   display: block;
   clear: both;
 }
-/* line 114, ../sass/import/_index.scss */
+/* line 101, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   position: relative;
   display: inline-block;
@@ -376,40 +373,40 @@ header .nav-right a:hover, header .nav-right a:focus {
   margin-right: 0.83333%;
   z-index: 3;
 }
-/* line 120, ../sass/import/_index.scss */
+/* line 107, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
   color: white;
   font-size: 20px;
 }
-/* line 125, ../sass/import/_index.scss */
+/* line 112, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   height: 100%;
 }
-/* line 128, ../sass/import/_index.scss */
+/* line 115, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires img {
   margin-top: 30px;
   max-height: 300px;
   max-width: 100%;
 }
-/* line 135, ../sass/import/_index.scss */
+/* line 122, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form {
   width: 100%;
   text-align: left;
 }
-/* line 138, ../sass/import/_index.scss */
+/* line 125, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input {
   width: 100%;
   padding: 10px;
   margin-top: 30px;
   color: #82868f;
 }
-/* line 144, ../sass/import/_index.scss */
+/* line 131, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form textarea {
   margin-top: 30px;
   width: 100%;
   padding: 10px;
 }
-/* line 149, ../sass/import/_index.scss */
+/* line 136, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit'] {
   width: 100px;
   background-color: #44e1ff;
@@ -419,7 +416,7 @@ header .nav-right a:hover, header .nav-right a:focus {
   cursor: pointer;
   float: right;
 }
-/* line 157, ../sass/import/_index.scss */
+/* line 144, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit']:hover {
   background-color: #00badd;
 }
@@ -528,4 +525,91 @@ header .nav-right a:hover, header .nav-right a:focus {
 /* line 21, ../sass/import/admin/_index.scss */
 .content-index .projets-list a:hover {
   text-decoration: none;
+}
+
+/* line 1, ../sass/import/_footer.scss */
+footer {
+  width: 100%;
+  background: white;
+  height: 120px;
+  position: absolute;
+  bottom: 0px;
+}
+/* line 7, ../sass/import/_footer.scss */
+footer .footer {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 120px;
+  color: #82868f;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+footer .footer:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 3, ../sass/import/_article.scss */
+.content-categorie h1 {
+  font-size: 35px;
+  font-weight: 300;
+  padding: 15px;
+}
+/* line 8, ../sass/import/_article.scss */
+.content-categorie h2 {
+  font-size: 30px;
+  padding: 15px;
+  color: #82868f;
+}
+/* line 13, ../sass/import/_article.scss */
+.content-categorie .section {
+  width: 65%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+}
+/* line 15, ../sass/import/_article.scss */
+.content-categorie .section .article {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  background: #fafafa;
+}
+/* line 21, ../sass/import/_article.scss */
+.content-categorie .section .article img {
+  margin: auto;
+  max-width: 80%;
+}
+/* line 26, ../sass/import/_article.scss */
+.content-categorie .section .article p {
+  text-align: justify;
+  padding-top: 30px;
+}
+/* line 33, ../sass/import/_article.scss */
+.content-categorie .aside-cat {
+  width: 31.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  text-align: center;
+}
+/* line 39, ../sass/import/_article.scss */
+.content-categorie .aside-cat .cate {
+  margin: auto;
+  display: block;
+  text-decoration: none;
+  color: #82868f;
+  font-size: 20px;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background: #f2f2f2;
+}
+/* line 50, ../sass/import/_article.scss */
+.content-categorie .aside-cat .cate:hover {
+  text-decoration: none;
+  background: #4c4c4c;
+  color: white;
 }

@@ -95,19 +95,6 @@
   text-align: center;
     position: relative;
 
-    &:after{
-      content:'';
-      display: block;
-      background: $bloc-gris-fonce;
-      position: absolute;
-      top:0;
-      left:0;
-      right: 0;
-      bottom:0;
-      @include transform-origin(0,0);
-      @include transform(skewY(2deg));
-      z-index:1;
-    }
 
     .contact-partenaires{
       @include container();
@@ -164,5 +151,6 @@
 
 
   }
+
   }
 

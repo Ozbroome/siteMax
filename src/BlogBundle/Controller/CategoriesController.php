@@ -14,46 +14,31 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class CategoriesController extends Controller
 {
-    /**
-     * Lists all category entities.
-     *
-     * @Route("/", name="admin_categories_index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('BlogBundle:Categories')->findAll();
-
-        return $this->render('categories/index.html.twig', array(
-            'categories' => $categories,
-        ));
-    }
 
     /**
      * Creates a new category entity.
      *
-     * @Route("/new", name="admin_categories_new")
+     * @Route("/{id}/new", name="admin_categories_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,$id)
     {
         $category = new Categories();
         $form = $this->createForm('BlogBundle\Form\CategoriesType', $category);
         $form->handleRequest($request);
-
+        $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush($category);
 
-            return $this->redirectToRoute('admin_categories_show', array('id' => $category->getId()));
+            return $this->redirectToRoute('projet_edit', array('id' => $category->getProjet()));
         }
-
         return $this->render(':admin/categories:new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
+            'categories' => $categories,
         ));
     }
 
@@ -67,7 +52,7 @@ class CategoriesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($category);
 
-        return $this->render('categories/show.html.twig', array(
+        return $this->render('/admin/categories/show.html.twig', array(
             'category' => $category,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -108,14 +93,14 @@ class CategoriesController extends Controller
     {
         $form = $this->createDeleteForm($category);
         $form->handleRequest($request);
-
+        $id = $category->getProjet();
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($category);
             $em->flush($category);
         }
 
-        return $this->redirectToRoute('admin_categories_index');
+        return $this->redirectToRoute('projet_edit', array('id' => $id));
     }
 
     /**

@@ -54,6 +54,7 @@ class ProjetController extends Controller
         return $this->render(':admin/projet:new.html.twig', array(
             'projet' => $projet,
             'form' => $form->createView(),
+
         ));
     }
 
@@ -79,14 +80,14 @@ class ProjetController extends Controller
      * @Route("/{id}/edit", name="projet_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Projet $projet)
+    public function editAction($id,Request $request, Projet $projet)
     {
         $deleteForm = $this->createDeleteForm($projet);
         $editForm = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $editForm->handleRequest($request);
-
+        $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
         $em = $this->getDoctrine()->getManager();
-        $categories = $em->getRepository('BlogBundle:Categories')->findAll();
+
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();

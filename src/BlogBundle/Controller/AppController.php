@@ -39,15 +39,17 @@ class AppController extends Controller
 
 
     /**
-     * @Route("/projet/categorie/{slug}")
+     * @Route("/projet/{idProjet}/categorie/{idCate}")
      */
-    public function categorieAction($slug,Request $request)
+    public function categorieAction($idCate,$idProjet,Request $request)
     {
 
-        $articles = $this->getDoctrine()->getRepository('BlogBundle:Articles')->findByCategorie($slug);
+        $articles = $this->getDoctrine()->getRepository('BlogBundle:Articles')->findByCategorie($idCate);
+        $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($idProjet);
 
         return $this->render(':projet:categorie.html.twig', [
             'articles' => $articles,
+            'categories' => $categories,
         ]);
 
     }

@@ -18,12 +18,19 @@ a{
 html{
   background: white;
   position: relative;
+  height: 100%;
 }
+body{
+height: 100%;
+}
+
 .content{
-  margin-top: 70px;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  @include container();
 }
 .container{
-
+min-height:100%;
   margin:0 auto;
   z-index:10;
   position: relative;

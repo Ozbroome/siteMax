@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin.html.twig' %}
 
 {% block body %}
     <div class="content">
@@ -11,7 +11,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_categories_index') }}">Back to the list</a>
+            <a href="{{ path('projet_edit',{ 'id':category.projet}) }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
