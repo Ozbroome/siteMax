@@ -99,18 +99,9 @@ body {
 .content {
   padding-top: 70px;
   padding-bottom: 120px;
-  max-width: 1160px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
-.content:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
-/* line 32, ../sass/import/_global.scss */
+/* line 31, ../sass/import/_global.scss */
 .container {
   min-height: 100%;
   margin: 0 auto;
@@ -118,17 +109,17 @@ body {
   position: relative;
 }
 
-/* line 38, ../sass/import/_global.scss */
+/* line 37, ../sass/import/_global.scss */
 .carouss {
   margin-top: 0;
   padding-top: 0;
   position: relative;
 }
-/* line 42, ../sass/import/_global.scss */
+/* line 41, ../sass/import/_global.scss */
 .carouss img {
   width: 100%;
 }
-/* line 45, ../sass/import/_global.scss */
+/* line 44, ../sass/import/_global.scss */
 .carouss .black-bandeau {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -137,7 +128,7 @@ body {
   z-index: 10;
   position: absolute;
 }
-/* line 52, ../sass/import/_global.scss */
+/* line 51, ../sass/import/_global.scss */
 .carouss .black-bandeau p, .carouss .black-bandeau h1 {
   text-align: center;
   color: white;

@@ -5,6 +5,7 @@ namespace BlogBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CategoriesType extends AbstractType
 {
@@ -13,7 +14,12 @@ class CategoriesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('contenu')->add('image')->add('projet')        ;
+        $builder->add('titre')
+            ->add('contenu', TextareaType::class , ['attr' =>
+                [  'class' =>'tinymce',]
+            ])
+            ->add('image')
+            ->add('projet')        ;
     }
     
     /**
@@ -22,7 +28,7 @@ class CategoriesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'BlogBundle\Entity\Categories'
+            'data_class' => 'BlogBundle\Entity\Categories',
         ));
     }
 

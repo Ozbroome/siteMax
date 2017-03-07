@@ -5,6 +5,7 @@ namespace BlogBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProjetType extends AbstractType
 {
@@ -13,7 +14,13 @@ class ProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('contenu')->add('image')        ;
+        $builder
+            ->add('titre')
+            ->add('contenu', TextareaType::class , array('attr' =>   array( 'class' =>'tinymce',
+                )))
+
+
+            ->add('image');
     }
     
     /**
