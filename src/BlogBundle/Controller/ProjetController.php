@@ -6,6 +6,8 @@ use BlogBundle\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\File;
+use BlogBundle\FileUploader;
 
 /**
  * Projet controller.
@@ -82,6 +84,15 @@ class ProjetController extends Controller
      */
     public function editAction($id,Request $request, Projet $projet)
     {
+        if ($projet->getImageURL() !== ''){
+            $testFile = $this->getParameter('img_directory').'/'.$projet->getImageURL();
+            if(file_exists($testFile)){
+                $projet->setImageURL(
+                    new File($this->getParameter('img_directory').'/'.$projet->getImageURL()));
+            } else {
+                $projet->setImageURL('');
+            }
+        }
         $deleteForm = $this->createDeleteForm($projet);
         $editForm = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $editForm->handleRequest($request);
@@ -90,6 +101,10 @@ class ProjetController extends Controller
 
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $file = $projet->getImageURL();
+            $fileName = $this->get('app.file_uploader')->upload($file);
+            $projet->setImageURL($fileName);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('projet_edit', array('id' => $projet->getId()));

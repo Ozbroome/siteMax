@@ -3,6 +3,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Projet
@@ -43,10 +44,13 @@ class Projet
     private $image;
 
 
-    public function __toString()
-    {
-        return strval($this->id);
-    }
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Ajoute une photo sinon c'est pas beau !")
+     * @Assert\File(mimeTypes={"image/jpeg"})
+     */
+    private $imageURL;
+
 
     /**
      * Get id
@@ -128,5 +132,29 @@ class Projet
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set imageURL
+     *
+     * @param string $imageURL
+     *
+     * @return Projet
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    /**
+     * Get imageURL
+     *
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
     }
 }
