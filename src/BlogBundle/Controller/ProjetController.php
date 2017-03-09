@@ -42,15 +42,27 @@ class ProjetController extends Controller
     public function newAction(Request $request)
     {
         $projet = new Projet();
+
+        //test existence fichier dans le répertoire et dans la base de donnée.
+        $directory = $this->getParameter('img_directory');
+        $this->get('app.file_uploader')->testFile($directory,$projet);
+
+
         $form = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //utilisation du service file_uploader
+            $file = $projet->getImageURL();
+            $fileName = $this->get('app.file_uploader')->upload($file);
+            $projet->setImageURL($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($projet);
             $em->flush($projet);
 
-            return $this->redirectToRoute('projet_show', array('id' => $projet->getId()));
+            return $this->redirectToRoute('projet_index', array('id' => $projet->getId()));
         }
 
         return $this->render(':admin/projet:new.html.twig', array(
@@ -84,15 +96,11 @@ class ProjetController extends Controller
      */
     public function editAction($id,Request $request, Projet $projet)
     {
-        if ($projet->getImageURL() !== ''){
-            $testFile = $this->getParameter('img_directory').'/'.$projet->getImageURL();
-            if(file_exists($testFile)){
-                $projet->setImageURL(
-                    new File($this->getParameter('img_directory').'/'.$projet->getImageURL()));
-            } else {
-                $projet->setImageURL('');
-            }
-        }
+        //test existence fichier dans le répertoire et dans la base de donnée.
+        $directory = $this->getParameter('img_directory');
+        $this->get('app.file_uploader')->testFile($directory,$projet);
+        $file = $projet->getImageURL();
+        //Création form
         $deleteForm = $this->createDeleteForm($projet);
         $editForm = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $editForm->handleRequest($request);
@@ -101,10 +109,13 @@ class ProjetController extends Controller
 
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $file = $projet->getImageURL();
-            $fileName = $this->get('app.file_uploader')->upload($file);
-            $projet->setImageURL($fileName);
-
+            if (!null == $projet->getImageURL()){
+                $file = $projet->getImageURL();
+            }
+            if($file !== '') {
+                $fileName = $this->get('app.file_uploader')->upload($file);
+                $projet->setImageURL($fileName);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('projet_edit', array('id' => $projet->getId()));

@@ -2,7 +2,7 @@
 {% block body %}
 <div class="content content-projet">
     <div class="carouss">
-        <img src="{{ asset(projet.image) }}" alt="">
+        <img src="{{ asset('img/'~projet.imageURL) }}" alt="">
         <div class="black-bandeau">
             <h1>{{ projet.titre | upper }}</h1>
         </div>

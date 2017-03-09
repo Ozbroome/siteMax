@@ -27,7 +27,7 @@
             {%   for projet in projets  %}
                 <a href="{{ asset("projet/"~projet.id) }}">
                     <div class="case-projet">
-                    <img src="{{ asset(projet.image ) }}" alt="">
+                    <img src="{{ asset('img/'~projet.imageURL ) }}" alt="">
                     <div class="legende-projet">
                         <p>{{ projet.titre }}</p>
                     </div>

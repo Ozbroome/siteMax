@@ -3,6 +3,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Articles
@@ -48,6 +49,15 @@ class Articles
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\File(
+     *     maxSize="8000k",
+     *     mimeTypes={"image/jpeg"}
+     *     )
+     */
+    private $imageURL;
 
     /**
      * @var int
@@ -185,5 +195,29 @@ class Articles
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set imageURL
+     *
+     * @param string $imageURL
+     *
+     * @return Articles
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    /**
+     * Get imageURL
+     *
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
     }
 }

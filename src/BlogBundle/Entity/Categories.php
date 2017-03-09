@@ -3,6 +3,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Categories
@@ -43,13 +44,25 @@ class Categories
     private $image;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\File(
+     *     maxSize="8000k",
+     *     mimeTypes={"image/jpeg"}
+     *     )
+     */
+    private $imageURL;
+
+    /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Projet")
      * @ORM\JoinColumn(name="projet_id", referencedColumnName="id", nullable=false)
      */
     private $projet;
 
-
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
     /**
      * Get id
@@ -155,5 +168,29 @@ class Categories
     public function getProjet()
     {
         return $this->projet;
+    }
+
+    /**
+     * Set imageURL
+     *
+     * @param string $imageURL
+     *
+     * @return Categories
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    /**
+     * Get imageURL
+     *
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
     }
 }

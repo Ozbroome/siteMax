@@ -5,7 +5,8 @@ namespace BlogBundle\Controller;
 use BlogBundle\Entity\Categories;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Category controller.
@@ -25,10 +26,20 @@ class CategoriesController extends Controller
     public function newAction(Request $request,$id)
     {
         $category = new Categories();
+
+
+
+
         $form = $this->createForm('BlogBundle\Form\CategoriesType', $category);
         $form->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //utilisation du service file_uploader
+            $file = $category->getImageURL();
+            $fileName = $this->get('app.file_uploader')->upload($file);
+            $category->setImageURL($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush($category);
@@ -66,11 +77,23 @@ class CategoriesController extends Controller
      */
     public function editAction(Request $request, Categories $category)
     {
+        //test existence fichier dans le répertoire et dans la base de donnée.
+        $directory = $this->getParameter('img_directory');
+        $this->get('app.file_uploader')->testFile($directory,$category);
+        $file = $category->getImageURL();
         $deleteForm = $this->createDeleteForm($category);
         $editForm = $this->createForm('BlogBundle\Form\CategoriesType', $category);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            if (!null == $category->getImageURL()){
+                $file = $category->getImageURL();
+            }
+            if($file !== '') {
+                $fileName = $this->get('app.file_uploader')->upload($file);
+                $category->setImageURL($fileName);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_categories_edit', array('id' => $category->getId()));

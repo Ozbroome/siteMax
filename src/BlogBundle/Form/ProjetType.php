@@ -22,7 +22,9 @@ class ProjetType extends AbstractType
 
 
             ->add('image')
-            ->add('imageURL', FileType::class);
+            ->add('imageURL', FileType::class,[
+                'required'=> false
+            ]);
     }
     
     /**

@@ -46,11 +46,17 @@ class Projet
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Ajoute une photo sinon c'est pas beau !")
-     * @Assert\File(mimeTypes={"image/jpeg"})
+     * @Assert\File(
+     *     maxSize="8000k",
+     *     mimeTypes={"image/jpeg"}
+     *     )
      */
     private $imageURL;
 
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
     /**
      * Get id

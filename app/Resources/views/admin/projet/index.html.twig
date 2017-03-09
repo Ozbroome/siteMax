@@ -32,7 +32,7 @@
 
                         <div class="case-projet">
                             <a href="{{ path('projet_edit', { 'id': projet.id }) }}">
-                            <img src="{{ asset(projet.image ) }}" alt="">
+                            <img src="{{ asset('img/'~projet.imageURL ) }}" alt="">
                             <div class="legende-projet">
                                 <p>{{ projet.titre }}</p>
 

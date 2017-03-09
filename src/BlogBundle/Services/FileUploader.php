@@ -9,6 +9,7 @@
 namespace BlogBundle\Services;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
 
 class FileUploader
 {
@@ -19,7 +20,7 @@ class FileUploader
         $this->targetDir = $targetDir;
     }
 
-    public function upload(UploadedFile $file)
+    public function upload($file)
     {
         $fileName = md5(uniqid()).'.'.$file->guessExtension();
         $file->move($this->targetDir, $fileName);
@@ -32,5 +33,23 @@ class FileUploader
     public function getTargetDir()
     {
         return $this->targetDir;
+    }
+
+    public function testFile($directory,$projet){
+
+        if ($projet->getImageURL() !== '' && null !== ($projet->getImageURL())) {
+            $testFile = $directory . '/' . $projet->getImageURL();
+            if (file_exists($testFile)) {
+                $projet->setImageURL(
+                    new File($testFile));
+            } else {
+                $projet->setImageURL('');
+            }
+        } elseif(null == ($projet->getImageURL())) {
+            $projet->setImageURL('');
+            }
+
+        return $projet;
+
     }
 }

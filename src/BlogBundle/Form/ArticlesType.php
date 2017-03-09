@@ -3,27 +3,29 @@
 namespace BlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 
-class CategoriesType extends AbstractType
+class ArticlesType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')
+        $builder
+            ->add('titre')
             ->add('contenu', TextareaType::class , ['attr' =>
                 [  'class' =>'tinymce',]
             ])
+            ->add('date')
             ->add('image')
             ->add('imageURL', FileType::class, [
                 'required' => false,
             ])
-            ->add('projet')        ;
+            ->add('categorie')        ;
     }
     
     /**
@@ -32,7 +34,7 @@ class CategoriesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'BlogBundle\Entity\Categories',
+            'data_class' => 'BlogBundle\Entity\Articles'
         ));
     }
 
@@ -41,7 +43,7 @@ class CategoriesType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'blogbundle_categories';
+        return 'blogbundle_articles';
     }
 
 
