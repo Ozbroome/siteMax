@@ -66,6 +66,13 @@ class Articles
      */
     private $categorie;
 
+    /**
+     * @return string (solution conversion to string à la génération d'un formulaire)
+     */
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
     /**
      * Get id

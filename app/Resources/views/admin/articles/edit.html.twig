@@ -11,7 +11,7 @@
 
         <ul>
             <li>
-                <a href="{{ path('admin_articles_index') }}">Back to the list</a>
+                <a href="<a href="{{ asset('admin/projet/'~article.categorie.projet~'/categorie/'~article.categorie.id) }}">Retour</a>
             </li>
             <li>
                 {{ form_start(delete_form) }}

@@ -21,18 +21,32 @@
                     {% if article.image == true %}
                         <img src="{{ asset(article.image) }}" alt="" class="img">
                     {% endif %}
-                    <p>{{ article.contenu }}</p>
+                    <p>{{ article.contenu | raw}}</p>
+                    <span class="btn-ajoutCom">Commentaires</span>
+                    <div class="bloc-commentaire"  id="{{ article.id }}">
 
+                {% for commentaire in commentaires if commentaire.article.id == article.id %}
+
+                    <div class="commentaire">{{ commentaire.contenu }}</div>
+                {% endfor %}
+                    </div>
 
                 </article>
                 <hr>
 
             {% endfor %}
 
-
             {% endif %}
-
+            <div>
+                <div id="form-com" class="form-com">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Create" />
+                    {{ form_end(form) }}
+                </div>
+            </div>
         </section>
+
     <aside class="aside-cat">
         <h2>Les catégories:</h2>
         {% for categorie in categories %}
@@ -44,5 +58,38 @@
 
 </div>
 
+
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function() {
+            $('.bloc-commentaire').hide();
+            form = $('#form-com');
+            valueId = $('.bloc-commentaire:first').attr('id');
+            ajoutForm(valueId);
+
+            $('.btn-ajoutCom').on('click',function(e){
+                var bloc = $(this).next('.bloc-commentaire');
+
+                bloc.toggle();
+
+                valueId = bloc.attr('id');
+                ajoutForm(valueId);
+            });
+
+            function ajoutForm(valueId){
+
+                valueId = parseInt(valueId);
+                $('select').each(function (i) {
+                    $("#blogbundle_commentaires_article > option[selected = 'selected']").attr('selected',false);
+                });
+                $('#blogbundle_commentaires_article > option[value = "'+valueId+'"]').attr('selected',true);
+                id = '#' + valueId;
+                $(id).append(form);
+            }
+
+        });
+
+    </script>
 
 {% endblock %}

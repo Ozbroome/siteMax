@@ -619,3 +619,925 @@ footer .footer:after {
   background: #4c4c4c;
   color: white;
 }
+
+/* line 1, ../sass/import/_commentaire.scss */
+.btn-ajoutCom {
+  display: block;
+  background: dimgrey;
+  color: white;
+  padding: 15px;
+}
+/* line 6, ../sass/import/_commentaire.scss */
+.btn-ajoutCom:hover {
+  cursor: pointer;
+  background: #363636;
+}
+
+/* line 11, ../sass/import/_commentaire.scss */
+.bloc-commentaire {
+  width: 100%;
+}
+/* line 13, ../sass/import/_commentaire.scss */
+.bloc-commentaire .commentaire {
+  padding: 30px;
+  background: #f2f2f2;
+  margin-top: 30px;
+  border: 1px solid #4c4c4c;
+}
+/* line 19, ../sass/import/_commentaire.scss */
+.bloc-commentaire #blogbundle_commentaires {
+  margin-top: 30px;
+  width: 100%;
+}
+/* line 22, ../sass/import/_commentaire.scss */
+.bloc-commentaire #blogbundle_commentaires .form-group {
+  width: 100%;
+}
+/* line 24, ../sass/import/_commentaire.scss */
+.bloc-commentaire #blogbundle_commentaires .form-group:nth-of-type(2) {
+  display: none;
+}
+/* line 29, ../sass/import/_commentaire.scss */
+.bloc-commentaire button,
+.bloc-commentaire input,
+.bloc-commentaire optgroup,
+.bloc-commentaire select,
+.bloc-commentaire textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+/* line 38, ../sass/import/_commentaire.scss */
+.bloc-commentaire button {
+  overflow: visible;
+}
+/* line 41, ../sass/import/_commentaire.scss */
+.bloc-commentaire button,
+.bloc-commentaire select {
+  text-transform: none;
+}
+/* line 45, ../sass/import/_commentaire.scss */
+.bloc-commentaire button,
+.bloc-commentaire html input[type="button"],
+.bloc-commentaire input[type="reset"],
+.bloc-commentaire input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+/* line 52, ../sass/import/_commentaire.scss */
+.bloc-commentaire button[disabled],
+.bloc-commentaire html input[disabled] {
+  cursor: default;
+}
+/* line 56, ../sass/import/_commentaire.scss */
+.bloc-commentaire button::-moz-focus-inner,
+.bloc-commentaire input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/* line 61, ../sass/import/_commentaire.scss */
+.bloc-commentaire input {
+  line-height: normal;
+}
+/* line 64, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="checkbox"],
+.bloc-commentaire input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+/* line 71, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="number"]::-webkit-inner-spin-button,
+.bloc-commentaire input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/* line 75, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 81, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="search"]::-webkit-search-cancel-button,
+.bloc-commentaire input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/* line 85, ../sass/import/_commentaire.scss */
+.bloc-commentaire fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/* line 90, ../sass/import/_commentaire.scss */
+.bloc-commentaire legend {
+  border: 0;
+  padding: 0;
+}
+/* line 94, ../sass/import/_commentaire.scss */
+.bloc-commentaire textarea {
+  overflow: auto;
+}
+/* line 97, ../sass/import/_commentaire.scss */
+.bloc-commentaire optgroup {
+  font-weight: bold;
+}
+/* line 100, ../sass/import/_commentaire.scss */
+.bloc-commentaire table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 104, ../sass/import/_commentaire.scss */
+.bloc-commentaire td,
+.bloc-commentaire th {
+  padding: 0;
+}
+/* line 108, ../sass/import/_commentaire.scss */
+.bloc-commentaire * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 113, ../sass/import/_commentaire.scss */
+.bloc-commentaire *:before,
+.bloc-commentaire *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 119, ../sass/import/_commentaire.scss */
+.bloc-commentaire html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 123, ../sass/import/_commentaire.scss */
+.bloc-commentaire body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+/* line 130, ../sass/import/_commentaire.scss */
+.bloc-commentaire input,
+.bloc-commentaire button,
+.bloc-commentaire select,
+.bloc-commentaire textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+/* line 138, ../sass/import/_commentaire.scss */
+.bloc-commentaire a {
+  color: #337ab7;
+  text-decoration: none;
+}
+/* line 142, ../sass/import/_commentaire.scss */
+.bloc-commentaire a:hover,
+.bloc-commentaire a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+/* line 147, ../sass/import/_commentaire.scss */
+.bloc-commentaire a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+/* line 151, ../sass/import/_commentaire.scss */
+.bloc-commentaire figure {
+  margin: 0;
+}
+/* line 154, ../sass/import/_commentaire.scss */
+.bloc-commentaire img {
+  vertical-align: middle;
+}
+/* line 157, ../sass/import/_commentaire.scss */
+.bloc-commentaire .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* line 162, ../sass/import/_commentaire.scss */
+.bloc-commentaire .img-rounded {
+  border-radius: 6px;
+}
+/* line 165, ../sass/import/_commentaire.scss */
+.bloc-commentaire .img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+/* line 178, ../sass/import/_commentaire.scss */
+.bloc-commentaire .img-circle {
+  border-radius: 50%;
+}
+/* line 181, ../sass/import/_commentaire.scss */
+.bloc-commentaire hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+/* line 187, ../sass/import/_commentaire.scss */
+.bloc-commentaire .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/* line 197, ../sass/import/_commentaire.scss */
+.bloc-commentaire .sr-only-focusable:active,
+.bloc-commentaire .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+/* line 206, ../sass/import/_commentaire.scss */
+.bloc-commentaire [role="button"] {
+  cursor: pointer;
+}
+/* line 209, ../sass/import/_commentaire.scss */
+.bloc-commentaire fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+/* line 215, ../sass/import/_commentaire.scss */
+.bloc-commentaire legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 226, ../sass/import/_commentaire.scss */
+.bloc-commentaire label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+/* line 232, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 237, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="radio"],
+.bloc-commentaire input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+/* line 243, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="file"] {
+  display: block;
+}
+/* line 246, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="range"] {
+  display: block;
+  width: 100%;
+}
+/* line 250, ../sass/import/_commentaire.scss */
+.bloc-commentaire select[multiple],
+.bloc-commentaire select[size] {
+  height: auto;
+}
+/* line 254, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="file"]:focus,
+.bloc-commentaire input[type="radio"]:focus,
+.bloc-commentaire input[type="checkbox"]:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+/* line 260, ../sass/import/_commentaire.scss */
+.bloc-commentaire output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+}
+/* line 267, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/* line 285, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+/* line 291, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+/* line 295, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control:-ms-input-placeholder {
+  color: #999999;
+}
+/* line 298, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+/* line 301, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+/* line 305, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control[disabled],
+.bloc-commentaire .form-control[readonly],
+.bloc-commentaire fieldset[disabled] .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+/* line 311, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control[disabled],
+.bloc-commentaire fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+/* line 315, ../sass/import/_commentaire.scss */
+.bloc-commentaire textarea.form-control {
+  height: auto;
+}
+/* line 318, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="search"] {
+  -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 322, ../sass/import/_commentaire.scss */
+  .bloc-commentaire input[type="date"].form-control,
+  .bloc-commentaire input[type="time"].form-control,
+  .bloc-commentaire input[type="datetime-local"].form-control,
+  .bloc-commentaire input[type="month"].form-control {
+    line-height: 34px;
+  }
+  /* line 328, ../sass/import/_commentaire.scss */
+  .bloc-commentaire input[type="date"].input-sm,
+  .bloc-commentaire input[type="time"].input-sm,
+  .bloc-commentaire input[type="datetime-local"].input-sm,
+  .bloc-commentaire input[type="month"].input-sm,
+  .bloc-commentaire .input-group-sm input[type="date"],
+  .bloc-commentaire .input-group-sm input[type="time"],
+  .bloc-commentaire .input-group-sm input[type="datetime-local"],
+  .bloc-commentaire .input-group-sm input[type="month"] {
+    line-height: 30px;
+  }
+  /* line 338, ../sass/import/_commentaire.scss */
+  .bloc-commentaire input[type="date"].input-lg,
+  .bloc-commentaire input[type="time"].input-lg,
+  .bloc-commentaire input[type="datetime-local"].input-lg,
+  .bloc-commentaire input[type="month"].input-lg,
+  .bloc-commentaire .input-group-lg input[type="date"],
+  .bloc-commentaire .input-group-lg input[type="time"],
+  .bloc-commentaire .input-group-lg input[type="datetime-local"],
+  .bloc-commentaire .input-group-lg input[type="month"] {
+    line-height: 46px;
+  }
+}
+/* line 349, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group {
+  margin-bottom: 15px;
+}
+/* line 352, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio,
+.bloc-commentaire .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 359, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio label,
+.bloc-commentaire .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+/* line 367, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio input[type="radio"],
+.bloc-commentaire .radio-inline input[type="radio"],
+.bloc-commentaire .checkbox input[type="checkbox"],
+.bloc-commentaire .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+/* line 375, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio + .radio,
+.bloc-commentaire .checkbox + .checkbox {
+  margin-top: -5px;
+}
+/* line 379, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio-inline,
+.bloc-commentaire .checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+/* line 389, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio-inline + .radio-inline,
+.bloc-commentaire .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+/* line 394, ../sass/import/_commentaire.scss */
+.bloc-commentaire input[type="radio"][disabled],
+.bloc-commentaire input[type="checkbox"][disabled],
+.bloc-commentaire input[type="radio"].disabled,
+.bloc-commentaire input[type="checkbox"].disabled,
+.bloc-commentaire fieldset[disabled] input[type="radio"],
+.bloc-commentaire fieldset[disabled] input[type="checkbox"] {
+  cursor: not-allowed;
+}
+/* line 402, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio-inline.disabled,
+.bloc-commentaire .checkbox-inline.disabled,
+.bloc-commentaire fieldset[disabled] .radio-inline,
+.bloc-commentaire fieldset[disabled] .checkbox-inline {
+  cursor: not-allowed;
+}
+/* line 408, ../sass/import/_commentaire.scss */
+.bloc-commentaire .radio.disabled label,
+.bloc-commentaire .checkbox.disabled label,
+.bloc-commentaire fieldset[disabled] .radio label,
+.bloc-commentaire fieldset[disabled] .checkbox label {
+  cursor: not-allowed;
+}
+/* line 414, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control-static {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+  min-height: 34px;
+}
+/* line 420, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control-static.input-lg,
+.bloc-commentaire .form-control-static.input-sm {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 425, ../sass/import/_commentaire.scss */
+.bloc-commentaire .input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+/* line 432, ../sass/import/_commentaire.scss */
+.bloc-commentaire select.input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+/* line 436, ../sass/import/_commentaire.scss */
+.bloc-commentaire textarea.input-sm,
+.bloc-commentaire select[multiple].input-sm {
+  height: auto;
+}
+/* line 440, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-sm .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+/* line 447, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-sm select.form-control {
+  height: 30px;
+  line-height: 30px;
+}
+/* line 451, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-sm textarea.form-control,
+.bloc-commentaire .form-group-sm select[multiple].form-control {
+  height: auto;
+}
+/* line 455, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-sm .form-control-static {
+  height: 30px;
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+/* line 462, ../sass/import/_commentaire.scss */
+.bloc-commentaire .input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+/* line 469, ../sass/import/_commentaire.scss */
+.bloc-commentaire select.input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+/* line 473, ../sass/import/_commentaire.scss */
+.bloc-commentaire textarea.input-lg,
+.bloc-commentaire select[multiple].input-lg {
+  height: auto;
+}
+/* line 477, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-lg .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+/* line 484, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-lg select.form-control {
+  height: 46px;
+  line-height: 46px;
+}
+/* line 488, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-lg textarea.form-control,
+.bloc-commentaire .form-group-lg select[multiple].form-control {
+  height: auto;
+}
+/* line 492, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-group-lg .form-control-static {
+  height: 46px;
+  min-height: 38px;
+  padding: 11px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+/* line 499, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-feedback {
+  position: relative;
+}
+/* line 502, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-feedback .form-control {
+  padding-right: 42.5px;
+}
+/* line 505, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+/* line 517, ../sass/import/_commentaire.scss */
+.bloc-commentaire .input-lg + .form-control-feedback,
+.bloc-commentaire .input-group-lg + .form-control-feedback,
+.bloc-commentaire .form-group-lg .form-control + .form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+/* line 524, ../sass/import/_commentaire.scss */
+.bloc-commentaire .input-sm + .form-control-feedback,
+.bloc-commentaire .input-group-sm + .form-control-feedback,
+.bloc-commentaire .form-group-sm .form-control + .form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 531, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-success .help-block,
+.bloc-commentaire .has-success .control-label,
+.bloc-commentaire .has-success .radio,
+.bloc-commentaire .has-success .checkbox,
+.bloc-commentaire .has-success .radio-inline,
+.bloc-commentaire .has-success .checkbox-inline,
+.bloc-commentaire .has-success.radio label,
+.bloc-commentaire .has-success.checkbox label,
+.bloc-commentaire .has-success.radio-inline label,
+.bloc-commentaire .has-success.checkbox-inline label {
+  color: #3c763d;
+}
+/* line 543, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* line 548, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+/* line 553, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-success .input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+/* line 558, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-success .form-control-feedback {
+  color: #3c763d;
+}
+/* line 561, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-warning .help-block,
+.bloc-commentaire .has-warning .control-label,
+.bloc-commentaire .has-warning .radio,
+.bloc-commentaire .has-warning .checkbox,
+.bloc-commentaire .has-warning .radio-inline,
+.bloc-commentaire .has-warning .checkbox-inline,
+.bloc-commentaire .has-warning.radio label,
+.bloc-commentaire .has-warning.checkbox label,
+.bloc-commentaire .has-warning.radio-inline label,
+.bloc-commentaire .has-warning.checkbox-inline label {
+  color: #8a6d3b;
+}
+/* line 573, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* line 578, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+/* line 583, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-warning .input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+/* line 588, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+/* line 591, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-error .help-block,
+.bloc-commentaire .has-error .control-label,
+.bloc-commentaire .has-error .radio,
+.bloc-commentaire .has-error .checkbox,
+.bloc-commentaire .has-error .radio-inline,
+.bloc-commentaire .has-error .checkbox-inline,
+.bloc-commentaire .has-error.radio label,
+.bloc-commentaire .has-error.checkbox label,
+.bloc-commentaire .has-error.radio-inline label,
+.bloc-commentaire .has-error.checkbox-inline label {
+  color: #a94442;
+}
+/* line 603, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-error .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* line 608, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-error .form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+/* line 613, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-error .input-group-addon {
+  color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
+}
+/* line 618, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-error .form-control-feedback {
+  color: #a94442;
+}
+/* line 621, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-feedback label ~ .form-control-feedback {
+  top: 25px;
+}
+/* line 624, ../sass/import/_commentaire.scss */
+.bloc-commentaire .has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
+}
+/* line 627, ../sass/import/_commentaire.scss */
+.bloc-commentaire .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+@media (min-width: 768px) {
+  /* line 634, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  /* line 639, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  /* line 644, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .form-control-static {
+    display: inline-block;
+  }
+  /* line 647, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  /* line 651, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .input-group .input-group-addon,
+  .bloc-commentaire .form-inline .input-group .input-group-btn,
+  .bloc-commentaire .form-inline .input-group .form-control {
+    width: auto;
+  }
+  /* line 656, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .input-group > .form-control {
+    width: 100%;
+  }
+  /* line 659, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  /* line 663, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .radio,
+  .bloc-commentaire .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  /* line 670, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .radio label,
+  .bloc-commentaire .form-inline .checkbox label {
+    padding-left: 0;
+  }
+  /* line 674, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .radio input[type="radio"],
+  .bloc-commentaire .form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  /* line 679, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-inline .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+/* line 683, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-horizontal .radio,
+.bloc-commentaire .form-horizontal .checkbox,
+.bloc-commentaire .form-horizontal .radio-inline,
+.bloc-commentaire .form-horizontal .checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+/* line 691, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-horizontal .radio,
+.bloc-commentaire .form-horizontal .checkbox {
+  min-height: 27px;
+}
+/* line 695, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 768px) {
+  /* line 700, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+/* line 706, ../sass/import/_commentaire.scss */
+.bloc-commentaire .form-horizontal .has-feedback .form-control-feedback {
+  right: 15px;
+}
+@media (min-width: 768px) {
+  /* line 710, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-horizontal .form-group-lg .control-label {
+    padding-top: 11px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 716, ../sass/import/_commentaire.scss */
+  .bloc-commentaire .form-horizontal .form-group-sm .control-label {
+    padding-top: 6px;
+    font-size: 12px;
+  }
+}
+/* line 721, ../sass/import/_commentaire.scss */
+.bloc-commentaire .clearfix:before,
+.bloc-commentaire .clearfix:after,
+.bloc-commentaire .form-horizontal .form-group:before,
+.bloc-commentaire .form-horizontal .form-group:after {
+  content: " ";
+  display: table;
+}
+/* line 728, ../sass/import/_commentaire.scss */
+.bloc-commentaire .clearfix:after,
+.bloc-commentaire .form-horizontal .form-group:after {
+  clear: both;
+}
+/* line 732, ../sass/import/_commentaire.scss */
+.bloc-commentaire .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 737, ../sass/import/_commentaire.scss */
+.bloc-commentaire .pull-right {
+  float: right !important;
+}
+/* line 740, ../sass/import/_commentaire.scss */
+.bloc-commentaire .pull-left {
+  float: left !important;
+}
+/* line 743, ../sass/import/_commentaire.scss */
+.bloc-commentaire .hide {
+  display: none !important;
+}
+/* line 746, ../sass/import/_commentaire.scss */
+.bloc-commentaire .show {
+  display: block !important;
+}
+/* line 749, ../sass/import/_commentaire.scss */
+.bloc-commentaire .invisible {
+  visibility: hidden;
+}
+/* line 752, ../sass/import/_commentaire.scss */
+.bloc-commentaire .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+/* line 759, ../sass/import/_commentaire.scss */
+.bloc-commentaire .hidden {
+  display: none !important;
+}
+/* line 762, ../sass/import/_commentaire.scss */
+.bloc-commentaire .affix {
+  position: fixed;
+}
+
+/* line 1, ../sass/import/_table.scss */
+table {
+  text-align: center;
+  margin: auto;
+}
+/* line 4, ../sass/import/_table.scss */
+table td {
+  text-align: center;
+  padding: 15px;
+  border: 1px solid black;
+}
