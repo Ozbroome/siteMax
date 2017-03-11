@@ -81,17 +81,22 @@ class CommentairesController extends Controller
      */
     public function editAction(Request $request, Commentaires $commentaire)
     {
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $deleteForm = $this->createDeleteForm($commentaire);
         $editForm = $this->createForm('BlogBundle\Form\CommentairesType', $commentaire);
         $editForm->handleRequest($request);
-
+        $idCate = 1;
+        $idProjet = 1;
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $idCate = $commentaire->getArticle()->getCategorie();
+            $idProjet = $idCate->getProjet();
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('commentaires_edit', array('id' => $commentaire->getId()));
+            return $this->redirectToRoute('admin_projet_categorie', array('idCate' => $idCate,'idProjet' => $idProjet));
         }
 
         return $this->render('commentaires/edit.html.twig', array(
+            'projets' => $projets,
             'commentaire' => $commentaire,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -108,14 +113,17 @@ class CommentairesController extends Controller
     {
         $form = $this->createDeleteForm($commentaire);
         $form->handleRequest($request);
-
+        $idCate = 1;
+        $idProjet = 1;
         if ($form->isSubmitted() && $form->isValid()) {
+            $idCate = $commentaire->getArticle()->getCategorie();
+            $idProjet = $idCate->getProjet();
             $em = $this->getDoctrine()->getManager();
             $em->remove($commentaire);
             $em->flush($commentaire);
         }
 
-        return $this->redirectToRoute('commentaires_index');
+        return $this->redirectToRoute('admin_projet_categorie', array('idCate' => $idCate,'idProjet' => $idProjet));
     }
 
     /**

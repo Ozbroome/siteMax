@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Article controller.
  *
- * @Route("admin")
+ * @Route("/admin")
  */
 class ArticlesController extends Controller
 {
@@ -33,17 +33,21 @@ class ArticlesController extends Controller
 
 
     /**
-     * @Route("/projet/{idProjet}/categorie/{idCate}")
+     * @Route("/projet/{idProjet}/categorie/{idCate}", name="admin_projet_categorie")
      */
     public function categorieAction($idCate,$idProjet,Request $request)
     {
-
+        $commentaires = $this->getDoctrine()->getRepository('BlogBundle:Commentaires')->findAll();
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $articles = $this->getDoctrine()->getRepository('BlogBundle:Articles')->findByCategorie($idCate);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($idProjet);
 
         return $this->render(':admin/articles:index.html.twig', [
+            'projets' => $projets,
             'articles' => $articles,
             'categories' => $categories,
+            'commentaires' => $commentaires,
+            'idCate' => $idCate,
         ]);
 
     }
@@ -53,12 +57,13 @@ class ArticlesController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/articles/new", name="admin_articles_new")
+     * @Route("/articles/new/{idCate}", name="admin_articles_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,$idCate)
     {
-        $article = new Article();
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
+        $article = new Articles();
         $form = $this->createForm('BlogBundle\Form\ArticlesType', $article);
         $form->handleRequest($request);
 
@@ -68,7 +73,7 @@ class ArticlesController extends Controller
             $file = $article->getImageURL();
             $fileName = $this->get('app.file_uploader')->upload($file);
             $article->setImageURL($fileName);
-
+            $article->setCategorie($idCate);
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush($article);
@@ -76,9 +81,10 @@ class ArticlesController extends Controller
             return $this->redirectToRoute('admin_articles_show', array('id' => $article->getId()));
         }
 
-        return $this->render('articles/new.html.twig', array(
+        return $this->render('admin/articles/new.html.twig', array(
             'article' => $article,
             'form' => $form->createView(),
+            'projets' => $projets,
         ));
     }
 
@@ -106,6 +112,7 @@ class ArticlesController extends Controller
      */
     public function editAction(Request $request, Articles $article)
     {
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         //test existence fichier dans le répertoire et dans la base de donnée.
         $directory = $this->getParameter('img_directory');
         $this->get('app.file_uploader')->testFile($directory,$article);
@@ -134,6 +141,7 @@ class ArticlesController extends Controller
         }
 
         return $this->render('admin/articles/edit.html.twig', array(
+            'projets' => $projets,
             'article' => $article,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -32,6 +32,13 @@ class Projet
     /**
      * @var string
      *
+     * @ORM\Column(name="titre_menu", type="string", length=255)
+     */
+    private $titreMenu;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="contenu", type="text", nullable=true)
      */
     private $contenu;
@@ -46,10 +53,17 @@ class Projet
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Ajoute une photo sinon c'est pas beau !")
+     * @Assert\File(
+     *     maxSize="8000k",
+     *     mimeTypes={"image/jpeg"}
+     *     )
      */
     private $imageURL;
 
+    public function __toString()
+    {
+        return strval($this->id);
+    }
 
     /**
      * Get id
@@ -131,5 +145,29 @@ class Projet
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set imageURL
+     *
+     * @param string $imageURL
+     *
+     * @return Projet
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    /**
+     * Get imageURL
+     *
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
     }
 }

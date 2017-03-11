@@ -5,11 +5,11 @@
     <div class="content content-categorie">
         {% if articles is empty %}
         <section class="section">
-            <h1>Il n'y a pas d'articles pour le moment dans cette catégorie:  <a href="{{ path('admin_articles_new') }}">Create a new article</a></h1>
+            <h1>Il n'y a pas d'articles pour le moment dans cette catégorie:  <a href="{{ path('admin_articles_new', {'idCate': idCate}) }}">Create a new article</a></h1>
         </section>
 
         {% else %}
-        <h1>{{ articles[0].categorie.titre~" - "~articles[0].categorie.projet.titre }} :  <a href="{{ path('admin_articles_new') }}">Create a new article</a></h1>
+        <h1>{{ articles[0].categorie.titre~" - "~articles[0].categorie.projet.titre }} :  <a href="{{ path('admin_articles_new', {'idCate': idCate}) }}">Create a new article</a></h1>
 
         <section class="section">
 
@@ -20,16 +20,27 @@
                     {% if article.image == true %}
                         <img src="{{ asset(article.image) }}" alt="" class="img">
                     {% endif %}
-                    <p>{{ article.contenu }}</p>
+                    <p>{{ article.contenu | raw }}</p>
                     <p><a href="{{ path('admin_articles_edit', { 'id': article.id }) }}">edit</a></p>
+                    <span class="btn-ajoutCom">Commentaires</span>
+                    <div class="bloc-commentaire"  id="{{ article.id }}">
+
+                        {% for commentaire in commentaires if commentaire.article.id == article.id %}
+
+                            <div class="commentaire">
+                                {{ commentaire.contenu }}
+                                <a href="{{ path('commentaires_edit', { 'id': commentaire.id }) }}">edit</a>
+                            </div>
+                        {% endfor %}
+                    </div>
 
                 </article>
                 <hr>
 
             {% endfor %}
 
-
             {% endif %}
+
 
         </section>
         <aside class="aside-cat">
@@ -42,5 +53,20 @@
         </aside>
 
     </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function() {
+            $('.bloc-commentaire').hide();
+            $('.btn-ajoutCom').on('click',function(e){
+                $('.bloc-commentaire').hide();
+                var bloc = $(this).next('.bloc-commentaire');
+                bloc.toggle();
+            });
+
+        });
+
+    </script>
 
 {% endblock %}

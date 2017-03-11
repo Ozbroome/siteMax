@@ -29,7 +29,7 @@ class CategoriesController extends Controller
 
 
 
-
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $form = $this->createForm('BlogBundle\Form\CategoriesType', $category);
         $form->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
@@ -50,6 +50,7 @@ class CategoriesController extends Controller
             'category' => $category,
             'form' => $form->createView(),
             'categories' => $categories,
+            'projets' => $projets,
         ));
     }
 
@@ -77,6 +78,7 @@ class CategoriesController extends Controller
      */
     public function editAction(Request $request, Categories $category)
     {
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         //test existence fichier dans le répertoire et dans la base de donnée.
         $directory = $this->getParameter('img_directory');
         $this->get('app.file_uploader')->testFile($directory,$category);
@@ -100,6 +102,7 @@ class CategoriesController extends Controller
         }
 
         return $this->render(':admin/categories:edit.html.twig', array(
+            'projets' => $projets,
             'category' => $category,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

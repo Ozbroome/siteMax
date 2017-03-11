@@ -10,4 +10,8 @@ namespace BlogBundle\Repository;
  */
 class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findLast(){
+        return $this->findBy(array(), array('id' => 'DESC'));
+    }
+
 }

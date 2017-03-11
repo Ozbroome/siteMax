@@ -41,6 +41,7 @@ class ProjetController extends Controller
      */
     public function newAction(Request $request)
     {
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $projet = new Projet();
 
         //test existence fichier dans le répertoire et dans la base de donnée.
@@ -68,6 +69,7 @@ class ProjetController extends Controller
         return $this->render(':admin/projet:new.html.twig', array(
             'projet' => $projet,
             'form' => $form->createView(),
+            'projets' => $projets,
 
         ));
     }
@@ -96,6 +98,7 @@ class ProjetController extends Controller
      */
     public function editAction($id,Request $request, Projet $projet)
     {
+        $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         //test existence fichier dans le répertoire et dans la base de donnée.
         $directory = $this->getParameter('img_directory');
         $this->get('app.file_uploader')->testFile($directory,$projet);
@@ -122,6 +125,7 @@ class ProjetController extends Controller
         }
 
         return $this->render(':admin/projet:edit.html.twig', array(
+            'projets' => $projets,
             'projet' => $projet,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

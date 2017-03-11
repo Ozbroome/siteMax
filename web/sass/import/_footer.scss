@@ -1,12 +1,12 @@
 footer{
   width: 100%;
   background: white;
-  height: 120px;
+padding-top: 50px;
+  padding-bottom: 50px;
   position: absolute;
   bottom: 0px;
   .footer{
     @include container();
-    line-height: 120px;
     color:$text-gris;
   }
 }

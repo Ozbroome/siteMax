@@ -34,26 +34,3 @@ min-height:100%;
   z-index:10;
   position: relative;
 }
-.carouss{
-  margin-top: 0;
-  padding-top: 0;
-  position: relative;
-  img{
-    width: 100%;
-  }
-  .black-bandeau{
-    width: 100%;
-    background-color: rgba(0,0,0,0.40);
-    height: 200px;
-    bottom: 0;
-    z-index:10;
-    position: absolute;
-    p,h1{
-      text-align: center;
-      color: white;
-      line-height:200px;
-      font-size: 20px;
-    }
-  }
-
-}

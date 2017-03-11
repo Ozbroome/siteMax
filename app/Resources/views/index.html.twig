@@ -26,12 +26,19 @@
             <div class="projets-list">
             {%   for projet in projets  %}
                 <a href="{{ asset("projet/"~projet.id) }}">
-                    <div class="case-projet">
+                    <div class="flip-container">
+                        <div class="flipper">
+                    <div class="case-projet front">
                     <img src="{{ asset('img/'~projet.imageURL ) }}" alt="">
                     <div class="legende-projet">
                         <p>{{ projet.titre }}</p>
                     </div>
                 </div>
+                    <div class="case-projet back">
+                        <p>{{ projet.contenu | raw }}</p>
+                    </div>
+                        </div>
+                    </div>
                 </a>
                 {% endfor %}
             </div>

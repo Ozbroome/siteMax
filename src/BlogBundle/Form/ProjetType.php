@@ -17,6 +17,7 @@ class ProjetType extends AbstractType
     {
         $builder
             ->add('titre')
+            ->add('titreMenu')
             ->add('contenu', TextareaType::class , array('attr' =>   array( 'class' =>'tinymce',
                 )))
 

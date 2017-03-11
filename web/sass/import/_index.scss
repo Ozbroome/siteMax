@@ -1,33 +1,10 @@
-
-
 .content-index{
-
   .presentation{
-    @include container();
-    width: 100%;
-    margin:0 auto;
-    text-align: center;
-    background: white;
-  padding-bottom: 40px;
-    z-index:8;
-      article{
-
-        text-align: justify;
-        display: inline-block;
-        @include span(4 of 12);
-        padding: 80px 30px;
-        color: $text-gris;
-
-        h2{
-          padding: 15px 0;
-          font-size: 20px;
-          color:black;
-        }
-      }
-    }
+    display: none;
+  }
   .projets{
     background: $bloc-gris-clair;
-    padding: 80px;
+    padding: 10px;
     text-align: center;
     margin: auto;
     position: relative;
@@ -64,12 +41,17 @@
       z-index: 3;
       text-align: center;
     }
+    .back{
+      display: none;
+    }
     .case-projet{
 
-      @include span(6 of 12);
+      @include span(12 of 12);
+      @media(min-width: 600px){
+        @include span(6 of 12);
+      }
       position: relative;
       z-index:3;
-      display: inline-block;
       margin-bottom: 30px;
       img{
         width: 100%;
@@ -88,12 +70,11 @@
     }
 
   }
-
   .bloc-contact-partenaires{
     background: $bloc-gris-fonce;
     padding-top: 80px;
     padding-bottom: 80px;
-  text-align: center;
+    text-align: center;
     position: relative;
 
 
@@ -103,8 +84,9 @@
         position: relative;
         display: inline-block;
         vertical-align: top;
-        @include span(6 of 12);
+        @include span(12 of 12);
         z-index: 3;
+        padding: 5px;
         h2{
           color:white;
           font-size: 20px;
@@ -152,6 +134,97 @@
 
 
   }
+}
+
+@media (min-width: 1000px) {
+  .content-index{
+    .projets{
+      padding: 80px;
+    .flip-container{
+      @include container();
+    }
+
+      /* flip the pane when hovered */
+      .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+      }
+
+      .flip-container, .front, .back {
+        @include span(6 of 12);
+        height: 400px;
+      }
+
+      /* flip speed goes here */
+      .flipper {
+        width: 100%;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+      }
+
+      /* hide back of pane during swap */
+      .front, .back {
+        width: 100%;
+        backface-visibility: hidden;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      /* front pane, placed above back */
+      .front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+      }
+
+      /* back, initially hidden pane */
+      .back {
+        transform: rotateY(180deg);
+        background: white;
+        padding: 15px;
+      }
+    }
+    .presentation{
+      display: block;
+      @include container();
+      width: 100%;
+      margin:0 auto;
+      text-align: center;
+      background: white;
+      padding-bottom: 40px;
+      z-index:8;
+      article{
+
+        text-align: justify;
+        display: inline-block;
+        @include span(4 of 12);
+        padding: 80px 30px;
+        color: $text-gris;
+
+        h2{
+          padding: 15px 0;
+          font-size: 20px;
+          color:black;
+        }
+      }
+    }
+    .bloc-contact-partenaires{
+      .contact-partenaires{
+        .contact,.partenaires{
+          @include span(6 of 12);
+          z-index: 3;
+        }
+      }
+    }
+
+
+
 
   }
+
+
+}
 

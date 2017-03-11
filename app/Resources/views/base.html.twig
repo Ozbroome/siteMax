@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Maxime Raguideau{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width"/>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="{{ asset('stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
@@ -24,8 +25,31 @@
     </div>
     <div class="nav-right">
         <ul class="navigation-liens-droite">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
+            <li><a href="#">Projets</a>
+                <ul class ="sous-menu">
+                    {% for projet in projets %}
+                    <li><a href="{{ asset("projet/"~projet.id) }}">{{ projet.titreMenu }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div id="navigation-burger" class="navigation-burger">
+             <span></span>
+         </div>
+    </div>
+    <div class="navigation-mobile">
+        <ul class="navigation-liens-mobile">
+            <li><a href="/">Accueil</a></li>
             <li><a href="#">Actualités</a></li>
-            <li><a href="#">Projets</a></li>
+            <li>
+                    {% for projet in projets %}
+                        <li><a href="{{ asset("projet/"~projet.id) }}">{{ projet.titreMenu }}</a></li>
+                    {% endfor %}
+
+            </li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
@@ -37,11 +61,25 @@
 <p>Copyright © 2017 Maxime Raguideau. All rights reserved.</p>
             </div>
         </footer>
-
         <script
                 src="https://code.jquery.com/jquery-3.1.1.min.js"
                 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
                 crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                var nav = $('.navigation-mobile')
+                nav.hide();
+                $('#navigation-burger').on('click',function (e) {
+                    if(nav.is(':visible')){
+                        nav.slideUp();
+                    } else if (nav.is(':hidden')){
+                        nav.slideDown();
+                    }
+
+                })
+            })
+        </script>
             {% block javascripts %}
             {% endblock %}
         </body>

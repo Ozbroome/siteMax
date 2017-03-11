@@ -1,23 +1,14 @@
 {% extends 'base.html.twig' %}
-
-
 {% block body %}
-    <hr>
-<div class="content content-categorie">
-    {% if articles is empty %}
-    <section class="section">
-        <h1>Il n'y a pas d'articles pour le moment dans cette catégorie.</h1>
-    </section>
 
-    {% else %}
-        <h1>{{ articles[0].categorie.titre~" - "~articles[0].categorie.projet.titre }}</h1>
-
+    <div class="content content-last">
+ <h1>Les derniers articles</h1>
         <section class="section">
 
             {% for article in articles %}
 
                 <article class="article">
-                    <h2>{{ article.titre }}</h2>
+                    <h2>{{ article.titre }} | {{ article.categorie.projet.titre }}</h2>
                     {% if article.image == true %}
                         <img src="{{ asset(article.image) }}" alt="" class="img">
                     {% endif %}
@@ -25,10 +16,10 @@
                     <span class="btn-ajoutCom">Commentaires</span>
                     <div class="bloc-commentaire"  id="{{ article.id }}">
 
-                {% for commentaire in commentaires if commentaire.article.id == article.id %}
+                        {% for commentaire in commentaires if commentaire.article.id == article.id %}
 
-                    <div class="commentaire">{{ commentaire.contenu }}</div>
-                {% endfor %}
+                            <div class="commentaire">{{ commentaire.contenu }}</div>
+                        {% endfor %}
                     </div>
 
                 </article>
@@ -36,7 +27,7 @@
 
             {% endfor %}
 
-            {% endif %}
+
             <div class="formulaire-commentaire">
                 <div id="form-com" class="form-com">
                     {{ form_start(form) }}
@@ -47,17 +38,7 @@
             </div>
         </section>
 
-    <aside class="aside-cat">
-        <h2>Les catégories:</h2>
-        {% for categorie in categories %}
-
-                <a class="cate" href="{{ asset('projet/'~categorie.projet~'/categorie/'~categorie.id) }}">{{ categorie.titre }}</a></h2>
-
-        {% endfor %}
-    </aside>
-
-</div>
-
+    </div>
 
 {% endblock %}
 {% block javascripts %}

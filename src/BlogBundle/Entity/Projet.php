@@ -32,6 +32,13 @@ class Projet
     /**
      * @var string
      *
+     * @ORM\Column(name="titre_menu", type="string", length=255)
+     */
+    private $titreMenu;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="contenu", type="text", nullable=true)
      */
     private $contenu;
@@ -162,5 +169,29 @@ class Projet
     public function getImageURL()
     {
         return $this->imageURL;
+    }
+
+    /**
+     * Set titreMenu
+     *
+     * @param string $titreMenu
+     *
+     * @return Projet
+     */
+    public function setTitreMenu($titreMenu)
+    {
+        $this->titreMenu = $titreMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get titreMenu
+     *
+     * @return string
+     */
+    public function getTitreMenu()
+    {
+        return $this->titreMenu;
     }
 }
