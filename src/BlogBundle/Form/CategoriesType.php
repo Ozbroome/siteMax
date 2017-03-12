@@ -16,7 +16,7 @@ class CategoriesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('titre')
-            ->add('contenu', TextareaType::class , ['attr' =>
+            ->add('contenu', TextareaType::class , ['required'=>false,'attr' =>
                 [  'class' =>'tinymce',]
             ])
             ->add('image')

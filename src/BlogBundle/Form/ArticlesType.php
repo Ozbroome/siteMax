@@ -17,7 +17,7 @@ class ArticlesType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu', TextareaType::class , ['attr' =>
+            ->add('contenu', TextareaType::class , ['required'=>false,'attr' =>
                 [  'class' =>'tinymce',]
             ])
             ->add('date')

@@ -52,7 +52,7 @@ class Projet
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Assert\File(
      *     maxSize="8000k",
      *     mimeTypes={"image/jpeg"}

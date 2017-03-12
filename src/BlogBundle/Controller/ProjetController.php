@@ -44,21 +44,15 @@ class ProjetController extends Controller
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $projet = new Projet();
 
-        //test existence fichier dans le répertoire et dans la base de donnée.
-        $directory = $this->getParameter('img_directory');
-        $this->get('app.file_uploader')->testFile($directory,$projet);
-
-
         $form = $this->createForm('BlogBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //utilisation du service file_uploader
             $file = $projet->getImageURL();
-            $fileName = $this->get('app.file_uploader')->upload($file);
-            $projet->setImageURL($fileName);
-
+            if(null !== $file) {
+                $fileName = $this->get('app.file_uploader')->upload($file);
+                $projet->setImageURL($fileName);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($projet);
             $em->flush($projet);
