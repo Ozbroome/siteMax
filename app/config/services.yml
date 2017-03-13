@@ -10,3 +10,10 @@ services:
      app.file_uploader:
         class: BlogBundle\Services\FileUploader
         arguments: ['%img_directory%']
+
+     app.email:
+        class: BlogBundle\Services\Email
+        arguments:
+            - "@mailer"
+            - "@twig"
+            - %mailer_user%

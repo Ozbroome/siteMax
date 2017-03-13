@@ -24,9 +24,26 @@ class AppController extends Controller
             $html = $this->getDoctrine()->getRepository('BlogBundle:Projet')->getExtraitProjet($contenu);
             $projet->setContenu($html);
     }
+        $form = $this->createForm('BlogBundle\Form\ContactType',null,array(
+            // To set the action use $this->generateUrl('route_identifier')
+            'action' => $this->generateUrl('blog_app_index'),
+            'method' => 'POST'
+        ));
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Refill the fields in case the form is not valid.
+
+
+            // Send mail
+            $this->get('app.email')->sendEmail($form->getData());
+            // Everything OK, redirect to wherever you want ! :
+            return $this->redirectToRoute('blog_app_index');
+
+        }
         return $this->render('index.html.twig', [
             'projets' => $projets,
             'html' => $html,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -107,6 +124,15 @@ class AppController extends Controller
         ]);
 
     }
+
+    public function contactAction(Request $request)
+    {
+        // Create the form according to the FormType created previously.
+        // And give the proper parameters
+
+        return $form;
+    }
+
 
 
 }

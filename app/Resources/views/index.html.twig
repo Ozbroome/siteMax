@@ -52,12 +52,33 @@
                 </div>
                 <div class="contact">
                     <h2>Me contacter</h2>
-                    <form action="">
-                        <div><input type="text" placeholder="Entrez votre nom et prénom ici"></div>
-                        <div><input type="text" placeholder="Entrez votre adresse mail ici"></div>
-                        <div><textarea name="message" id="" rows="10" placeholder="Entrez votre message ici"></textarea></div>
-                        <div><input type="submit"></div>
-                    </form>
+                    {{ form_start(form) }}
+
+                    <div>
+                        {{ form_widget(form.subject) }}
+                        {{ form_errors(form.subject) }}
+                    </div>
+                    <div>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                    <div>
+                        {{ form_widget(form.email) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                    <div>
+                        {{ form_widget(form.message) }}
+                        {{ form_errors(form.message) }}
+                    </div>
+
+                    {# Render CSRF token etc .#}
+                    <div style="display:none">
+                        {{ form_rest(form) }}
+                    </div>
+
+                    <input type="submit" value="Submit">
+
+                    {{ form_end(form) }}
                 </div>
             </div>
 
