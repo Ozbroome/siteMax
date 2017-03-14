@@ -62,23 +62,27 @@ class ArticlesController extends Controller
      */
     public function newAction(Request $request,$idCate)
     {
+        $categorie = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findOneById($idCate);
+        $idProjet = $categorie->getProjet();
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         $article = new Articles();
+        $article->setCategorie($categorie);
         $form = $this->createForm('BlogBundle\Form\ArticlesType', $article);
         $form->handleRequest($request);
+        $directory = $this->getParameter('img_directory');
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //utilisation du service file_uploader
+            $this->get('app.file_uploader')->testFile($directory,$article);
             $file = $article->getImageURL();
-            $fileName = $this->get('app.file_uploader')->upload($file);
-            $article->setImageURL($fileName);
-            $article->setCategorie($idCate);
+            if($file !== '') {
+                $fileName = $this->get('app.file_uploader')->upload($file);
+                $article->setImageURL($fileName);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush($article);
 
-            return $this->redirectToRoute('admin_articles_show', array('id' => $article->getId()));
+            return $this->redirectToRoute('admin_projet_categorie', array('idProjet' => $idProjet,'idCate' => $idCate));
         }
 
         return $this->render('admin/articles/new.html.twig', array(
@@ -112,19 +116,17 @@ class ArticlesController extends Controller
      */
     public function editAction(Request $request, Articles $article)
     {
+        $idCate = $article->getCategorie();
+        $idProjet = $idCate->getProjet();
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         //test existence fichier dans le répertoire et dans la base de donnée.
         $directory = $this->getParameter('img_directory');
         $this->get('app.file_uploader')->testFile($directory,$article);
         $file = $article->getImageURL();
-
         $deleteForm = $this->createDeleteForm($article);
         $editForm = $this->createForm('BlogBundle\Form\ArticlesType', $article);
         $editForm->handleRequest($request);
-
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-
-
             if (!null == $article->getImageURL()){
                 $file = $article->getImageURL();
             }
@@ -133,13 +135,10 @@ class ArticlesController extends Controller
                 $fileName = $this->get('app.file_uploader')->upload($file);
                 $article->setImageURL($fileName);
             }
-
-
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_articles_edit', array('id' => $article->getId()));
+            return $this->redirectToRoute('admin_projet_categorie', array('idProjet' => $idProjet,'idCate' => $idCate));
         }
-
         return $this->render('admin/articles/edit.html.twig', array(
             'projets' => $projets,
             'article' => $article,
@@ -156,6 +155,8 @@ class ArticlesController extends Controller
      */
     public function deleteAction(Request $request, Articles $article)
     {
+        $idCate = $article->getCategorie();
+        $idProjet = $idCate->getProjet();
         $form = $this->createDeleteForm($article);
         $form->handleRequest($request);
 
@@ -165,7 +166,8 @@ class ArticlesController extends Controller
             $em->flush($article);
         }
 
-        return $this->redirectToRoute('admin_articles_index');
+        return $this->redirectToRoute('admin_projet_categorie', array('idProjet' => $idProjet,'idCate' => $idCate));
+
     }
 
     /**

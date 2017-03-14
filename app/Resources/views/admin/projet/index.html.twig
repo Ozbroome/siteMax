@@ -27,7 +27,7 @@
         <div class="projets">
 
             <div class="projets-list">
-                <h2><a href="{{ path('projet_new') }}">Créer un nouveau projet</a></h2>
+                <h2 class="create"><a href="{{ path('projet_new') }}">Créer un nouveau projet</a></h2>
                 {%   for projet in projets  %}
 
                         <div class="case-projet">
@@ -39,7 +39,7 @@
 
                             </div>
                             </a>
-                            <a href="{{ path('projet_edit', { 'id': projet.id }) }}">editer</a>
+                            <a class="editer" href="{{ path('projet_edit', { 'id': projet.id }) }}">editer</a>
                         </div>
 
 

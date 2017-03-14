@@ -26,7 +26,9 @@ class CategoriesController extends Controller
     public function newAction(Request $request,$id)
     {
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
+        $projet = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findOneById($id);
         $category = new Categories();
+        $category->setProjet($projet);
         $form = $this->createForm('BlogBundle\Form\CategoriesType', $category);
         $form->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
@@ -40,7 +42,6 @@ class CategoriesController extends Controller
                 $fileName = $this->get('app.file_uploader')->upload($file);
                 $category->setImageURL($fileName);
             }
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush($category);
@@ -52,6 +53,7 @@ class CategoriesController extends Controller
             'category' => $category,
             'form' => $form->createView(),
             'categories' => $categories,
+            'idProjet' => $id,
         ));
     }
 

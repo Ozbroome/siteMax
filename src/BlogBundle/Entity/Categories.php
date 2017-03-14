@@ -55,7 +55,7 @@ class Categories
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Projet")
-     * @ORM\JoinColumn(name="projet_id", referencedColumnName="id", nullable=false)
+     * @ORM\JoinColumn(name="projet_id", referencedColumnName="id", nullable=false, onDelete="cascade" )
      */
     private $projet;
 

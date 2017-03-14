@@ -6,12 +6,12 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input class="editer" type="submit" value="Create" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('projet_edit',{ 'id':categories[0].projet}) }}">Back to the list</a>
+            <a href="{{ path('projet_edit',{ 'id':idProjet}) }}">Retour à la liste</a>
         </li>
     </ul>
     </div>

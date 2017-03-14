@@ -31,7 +31,7 @@ class Commentaires
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Articles")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false,  onDelete="cascade" )
      */
     private $article;
 

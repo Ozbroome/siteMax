@@ -20,7 +20,6 @@ class ArticlesType extends AbstractType
             ->add('contenu', TextareaType::class , ['required'=>false,'attr' =>
                 [  'class' =>'tinymce',]
             ])
-            ->add('date')
             ->add('image')
             ->add('imageURL', FileType::class, [
                 'required' => false,

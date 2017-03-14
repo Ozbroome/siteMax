@@ -38,8 +38,10 @@ class FileUploader
     public function testFile($directory,$projet){
 
         if ($projet->getImageURL() !== '' && null !== ($projet->getImageURL())) {
+
             $testFile = $directory . '/' . $projet->getImageURL();
             if (file_exists($testFile)) {
+                $projet->setImage($projet->getImageURL());
                 $projet->setImageURL(
                     new File($testFile));
             } else {

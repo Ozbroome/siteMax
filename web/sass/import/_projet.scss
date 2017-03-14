@@ -1,61 +1,70 @@
-.content-projet{
+.content-projet {
 
-  .presentation-projet{
+  .presentation-projet {
 
     width: 100%;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
     background: white;
     padding-bottom: 40px;
-    article{
+    article {
       @include container(1160px);
       text-align: justify;
       display: inline-block;
       width: 100%;
-      padding: 80px;
+      padding: 10px;
       color: $text-gris;
 
-      h2{
+      h2 {
         padding: 15px 0;
         font-size: 20px;
-        color:black;
+        color: black;
       }
     }
   }
-  .bloc-categorie{
+  .bloc-categorie {
     background: $bloc-gris-fonce;
   }
-  .categorie{
+  .categorie {
     @include container(1160px);
     text-align: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    .case-categorie{
+    .case-categorie {
       @include span(4 of 12);
       background: $bloc-gris-clair;
       height: 200px;
       line-height: 200px;
       margin-top: 15px;
       margin-bottom: 15px;
-      ul li{
+      ul li {
         display: inline;
-        &:last-child a{
+        &:last-child a {
           font-size: small;
-          color:red;
+          color: red;
         }
       }
     }
 
-    a{
-
+    a {
 
       text-decoration: none;
       color: $text-gris;
       font-size: 20px;
-      &:hover{
+      &:hover {
         text-decoration: none;
       }
 
     }
   }
+}
+@media (min-width: 1000px) {
+  .content-projet{
+    .presentation-projet{
+      article{
+        padding: 80px;
+      }
+    }
+  }
+
 }

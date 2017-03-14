@@ -1,22 +1,23 @@
 {% extends 'admin/admin.html.twig' %}
 
 {% block body %}
-    <div class="content">
-        <h1>Article edit</h1>
+    <div class="content content-form">
+        <h1>Edition d'un article</h1>
 
         {{ form_start(edit_form) }}
             {{ form_widget(edit_form) }}
-            <input type="submit" value="Edit" />
+            <input class="editer" type="submit" value="Edit" />
         {{ form_end(edit_form) }}
 
         <ul>
-            <li>
-                <a href="<a href="{{ asset('admin/projet/'~article.categorie.projet~'/categorie/'~article.categorie.id) }}">Retour</a>
-            </li>
+
             <li>
                 {{ form_start(delete_form) }}
-                    <input type="submit" value="Delete">
+                    <input class="delete" type="submit" value="Delete">
                 {{ form_end(delete_form) }}
+            </li>
+            <li>
+                <a  class="retour" href="<a href="{{ asset('admin/projet/'~article.categorie.projet~'/categorie/'~article.categorie.id) }}">Retour</a>
             </li>
         </ul>
     </div>

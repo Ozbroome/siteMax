@@ -62,7 +62,7 @@ class Articles
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="BlogBundle\Entity\Categories")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false,  onDelete="cascade" )
      */
     private $categorie;
 
@@ -72,6 +72,11 @@ class Articles
     public function __toString()
     {
         return strval($this->id);
+    }
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
     }
 
     /**
