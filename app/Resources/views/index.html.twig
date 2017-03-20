@@ -25,7 +25,7 @@
         <div class="projets">
             <div class="projets-list">
             {%   for projet in projets  %}
-                <a href="{{ asset("projet/"~projet.id) }}">
+                <a href="{{ path('projet_cate', { 'idProjet': projet.id })}}">
                     <div class="flip-container">
                         <div class="flipper">
                     <div class="case-projet front">

@@ -8,10 +8,50 @@
     <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
     {% endblock %}
 
-{% block retour %}
-    {{ asset('admin/projet/') }}
-{% endblock %}
+ {% block nav %}
+     <nav class="navigation">
+         <div class="logo">
+             <a href="{{ asset('admin/projet/') }}">Maxime Raguideau</a>
+         </div>
+         <div class="nav-right">
+             <ul class="navigation-liens-droite">
+                 <li><a href="/">Accueil</a></li>
+                 <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
+                 <li><a href="#">Projets</a>
+                     <ul class ="sous-menu">
+                         {% for projet in projets %}
+                             <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>
+                         {% endfor %}
+                     </ul>
+                 </li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="{{ path('fos_user_security_logout') }}">
+                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                     </a></li>
+             </ul>
+             <div id="navigation-burger" class="navigation-burger">
+                 <span></span>
+             </div>
+         </div>
+         <div class="navigation-mobile">
+             <ul class="navigation-liens-mobile">
+                 <li><a href="/">Accueil</a></li>
+                 <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
+                 <li>
+                     {% for projet in projets %}
+                 <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>
+                 {% endfor %}
 
+                 </li>
+                 <li><a href="#">Contact</a></li>
+                 <a href="{{ path('fos_user_security_logout') }}">
+                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                 </a>
+             </ul>
+         </div>
+     </nav>
+
+{% endblock %}
 {% block javascripts %}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>

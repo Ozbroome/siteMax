@@ -48,12 +48,12 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/projet/{slug}", requirements={"slug": "\d+"})
+     * @Route("/projet/{idProjet}",name="projet_cate", requirements={"idProjet": "\d+"})
      */
-    public function projetAction($slug,Request $request)
+    public function projetAction($idProjet,Request $request)
     {
-        $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($slug);
-        $projet = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findOneById($slug);
+        $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($idProjet);
+        $projet = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findOneById($idProjet);
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
 
         return $this->render('projet.html.twig', [
@@ -86,7 +86,7 @@ class AppController extends Controller
 
 
     /**
-     * @Route("/projet/{idProjet}/categorie/{idCate}", name="projet_categorie")
+     * @Route("/projet/{idProjet}/categorie/{idCate}", name="projet_categorie_articles")
      */
     public function categorieAction($idCate,$idProjet,Request $request)
     {

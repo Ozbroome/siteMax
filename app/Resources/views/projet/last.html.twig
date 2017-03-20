@@ -9,8 +9,8 @@
 
                 <article class="article">
                     <h2>{{ article.titre }} | {{ article.categorie.projet.titre }}</h2>
-                    {% if article.image == true %}
-                        <img src="{{ asset(article.image) }}" alt="" class="img">
+                    {% if article.imageURL == true %}
+                        <img src="{{ asset('img/'~article.imageURL) }}" alt="" class="img">
                     {% endif %}
                     <p>{{ article.contenu | raw}}</p>
                     <span class="btn-ajoutCom">Commentaires</span>

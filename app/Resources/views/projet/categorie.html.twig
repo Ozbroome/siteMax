@@ -51,7 +51,7 @@
         <h2>Les catégories:</h2>
         {% for categorie in categories %}
 
-                <a class="cate" href="{{ asset('projet/'~categorie.projet~'/categorie/'~categorie.id) }}">{{ categorie.titre }}</a></h2>
+                <a class="cate" href="{{ path('projet_categorie_articles',{'idProjet':categorie.projet,'idCate':categorie.id}) }}">{{ categorie.titre }}</a></h2>
 
         {% endfor %}
     </aside>

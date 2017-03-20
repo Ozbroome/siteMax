@@ -19,7 +19,7 @@
 
         {% for categorie in categories %}
 
-            <a href="{{ asset('projet/'~categorie.projet.id~'/categorie/'~categorie.id) }}">
+            <a href="{{ path('projet_categorie_articles',{'idProjet':categorie.projet,'idCate':categorie.id}) }}">
                 <div class="case-categorie">
                     <h2>{{ categorie.titre }}</h2>
                 </div>

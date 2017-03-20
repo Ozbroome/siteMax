@@ -27,7 +27,7 @@
                 {% for categorie in categories %}
                     <div class="case-categorie">
                         <ul>
-                            <li><a href="{{ asset('admin/projet/'~categorie.projet~'/categorie/'~categorie.id) }}">{{  categorie.titre }} </a></li>
+                            <li><a href="{{ path('admin_projet_categorie',{'idProjet':categorie.projet,'idCate':categorie.id}) }}">{{  categorie.titre }} </a></li>
                             <li><a class="editer" href="{{ path('admin_categories_edit', { 'id': categorie.id }) }}">Editer</a></li>
                         </ul>
                     </div>

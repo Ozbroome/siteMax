@@ -19,9 +19,10 @@
 
             <!-- Navigation
             ================================================== -->
+            {% block nav %}
 <nav class="navigation">
     <div class="logo">
-        <a href="{% block retour %}/{% endblock %}">Maxime Raguideau</a>
+        <a href="/">Maxime Raguideau</a>
     </div>
     <div class="nav-right">
         <ul class="navigation-liens-droite">
@@ -30,7 +31,7 @@
             <li><a href="#">Projets</a>
                 <ul class ="sous-menu">
                     {% for projet in projets %}
-                    <li><a href="{{ asset("projet/"~projet.id) }}">{{ projet.titreMenu }}</a></li>
+                    <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
@@ -43,10 +44,10 @@
     <div class="navigation-mobile">
         <ul class="navigation-liens-mobile">
             <li><a href="/">Accueil</a></li>
-            <li><a href="#">Actualités</a></li>
+            <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
             <li>
                     {% for projet in projets %}
-                        <li><a href="{{ asset("projet/"~projet.id) }}">{{ projet.titreMenu }}</a></li>
+                        <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>
                     {% endfor %}
 
             </li>
@@ -54,6 +55,7 @@
         </ul>
     </div>
 </nav>
+            {% endblock %}
         </header>
             {% block body %}{% endblock %}
         <footer>
