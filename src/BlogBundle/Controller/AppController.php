@@ -13,7 +13,7 @@ use BlogBundle\Entity\Projet;
 class AppController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="accueil")
      */
     public function indexAction(Request $request)
     {
@@ -26,7 +26,7 @@ class AppController extends Controller
     }
         $form = $this->createForm('BlogBundle\Form\ContactType',null,array(
             // To set the action use $this->generateUrl('route_identifier')
-            'action' => $this->generateUrl('blog_app_index'),
+            'action' => $this->generateUrl('accueil'),
             'method' => 'POST'
         ));
         $form->handleRequest($request);

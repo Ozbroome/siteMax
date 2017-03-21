@@ -78,5 +78,17 @@
             ]
         });
     </script>
+    <script type="text/javascript">
+        $(function () {
+                    $('.delete').on('click',function(e){
+                            e.preventDefault();
+                            if(confirm('Voulez vous confirmer la suppression ? ')){
+                                var form = $(this).parent();
+                                form.submit();
+                            }
 
+            })
+
+        })
+    </script>
 {% endblock %}

@@ -22,14 +22,32 @@ class ProjetController extends Controller
      * @Route("/", name="projet_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $projets = $em->getRepository('BlogBundle:Projet')->findAll();
 
+        $form = $this->createForm('BlogBundle\Form\ContactType',null,array(
+            // To set the action use $this->generateUrl('route_identifier')
+            'action' => $this->generateUrl('accueil'),
+            'method' => 'POST'
+        ));
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Refill the fields in case the form is not valid.
+
+
+            // Send mail
+            $this->get('app.email')->sendEmail($form->getData());
+            // Everything OK, redirect to wherever you want ! :
+            return $this->redirectToRoute('projet_index');
+
+        }
+
         return $this->render(':admin/projet:index.html.twig', array(
             'projets' => $projets,
+            'form' =>$form,
         ));
     }
 

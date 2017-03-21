@@ -1596,11 +1596,19 @@ header .navigation-burger span:after {
   }
   /* line 184, ../sass/import/_index.scss */
   .content-index .projets .back {
+    line-height: 400px;
     transform: rotateY(180deg);
     background: white;
     padding: 15px;
   }
-  /* line 190, ../sass/import/_index.scss */
+  /* line 186, ../sass/import/_index.scss */
+  .content-index .projets .back p {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  /* line 198, ../sass/import/_index.scss */
   .content-index .presentation {
     display: block;
     max-width: 1160px;
@@ -1619,7 +1627,7 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 199, ../sass/import/_index.scss */
+  /* line 207, ../sass/import/_index.scss */
   .content-index .presentation article {
     text-align: justify;
     display: inline-block;
@@ -1630,13 +1638,13 @@ header .navigation-burger span:after {
     padding: 80px 30px;
     color: #82868f;
   }
-  /* line 207, ../sass/import/_index.scss */
+  /* line 215, ../sass/import/_index.scss */
   .content-index .presentation article h2 {
     padding: 15px 0;
     font-size: 20px;
     color: black;
   }
-  /* line 216, ../sass/import/_index.scss */
+  /* line 224, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
     width: 48.33333%;
     float: left;
@@ -1896,6 +1904,7 @@ footer .footer:after {
 }
 /* line 21, ../sass/import/_article.scss */
 .content-categorie .section .article img {
+  max-height: 40vh;
   margin: auto;
   max-width: 80%;
 }
