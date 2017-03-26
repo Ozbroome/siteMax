@@ -1,5 +1,6 @@
 {
     "name": "eric/sitemax",
+    "description":"Un blog pour un aventurier",
     "license": "proprietary",
     "type": "project",
     "autoload": {
