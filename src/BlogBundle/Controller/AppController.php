@@ -2,13 +2,11 @@
 
 namespace BlogBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use BlogBundle\Entity\Commentaires;
-use BlogBundle\Entity\Categories;
-use BlogBundle\Entity\Projet;
+
 
 class AppController extends Controller
 {
@@ -32,7 +30,7 @@ class AppController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $decode = $this->get('app.recaptcha')->verifCaptcha();
-            if($decode['success'] == true){
+            if($decode['success'] === true){
                 $this->get('app.email')->sendEmail($form->getData());
             }
             else {
@@ -77,7 +75,7 @@ class AppController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $decode = $this->get('app.recaptcha')->verifCaptcha();
-            if($decode['success'] == true){
+            if($decode['success'] === true){
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($newCommentaire);
                 $em->flush($newCommentaire);
@@ -110,7 +108,7 @@ class AppController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $decode = $this->get('app.recaptcha')->verifCaptcha();
-            if($decode['success'] == true){
+            if($decode['success'] === true){
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($newCommentaire);
                 $em->flush($newCommentaire);

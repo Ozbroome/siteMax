@@ -8,7 +8,6 @@
 
 namespace BlogBundle\Services;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 
 class FileUploader
@@ -47,7 +46,7 @@ class FileUploader
             } else {
                 $projet->setImageURL('');
             }
-        } elseif(null == ($projet->getImageURL())) {
+        } elseif(null === ($projet->getImageURL())) {
             $projet->setImageURL('');
             }
 
