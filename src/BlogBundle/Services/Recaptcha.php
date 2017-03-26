@@ -1,8 +1,6 @@
 <?php
 namespace BlogBundle\Services;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class Recaptcha

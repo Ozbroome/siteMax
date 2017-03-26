@@ -20,7 +20,7 @@ class FileUploader
         $this->targetDir = $targetDir;
     }
 
-    public function upload($file)
+    public function upload(File $file)
     {
         $fileName = md5(uniqid()).'.'.$file->guessExtension();
         $file->move($this->targetDir, $fileName);
@@ -35,7 +35,7 @@ class FileUploader
         return $this->targetDir;
     }
 
-    public function testFile($directory,$projet){
+    public function testFile($directory,Projet $projet){
 
         if ($projet->getImageURL() !== '' && null !== ($projet->getImageURL())) {
 
