@@ -33,9 +33,7 @@ class CategoriesController extends Controller
         $form->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($id);
         $directory = $this->getParameter('img_directory');
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             $this->get('app.file_uploader')->testFile($directory,$category);
             $file = $category->getImageURL();
             if($file !== '') {
@@ -45,7 +43,6 @@ class CategoriesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush($category);
-
             return $this->redirectToRoute('projet_edit', array('id' => $category->getProjet()));
         }
         return $this->render(':admin/categories:new.html.twig', array(

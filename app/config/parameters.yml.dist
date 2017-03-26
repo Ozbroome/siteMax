@@ -8,6 +8,7 @@ parameters:
     database_user:     root
     database_password: ~
     img_directory: ~
+    clef_recaptcha: ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 

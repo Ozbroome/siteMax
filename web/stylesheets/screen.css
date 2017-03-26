@@ -2056,3 +2056,20 @@ table td {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+/* line 1, ../sass/import/_flashBag.scss */
+#alert {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+/* line 5, ../sass/import/_flashBag.scss */
+#alert .alert {
+  padding: 10px;
+  background-color: #cd7e7f;
+  color: white;
+}
+/* line 9, ../sass/import/_flashBag.scss */
+#alert .alert span {
+  color: black;
+}

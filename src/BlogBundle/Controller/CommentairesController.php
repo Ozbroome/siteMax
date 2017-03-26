@@ -44,9 +44,13 @@ class CommentairesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($commentaire);
-            $em->flush($commentaire);
+            $this->get('app.recaptcha')->verifCaptcha();
+            if ($test = 'success'){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($commentaire);
+                $em->flush($commentaire);
+            }
+
 
             return $this->redirectToRoute('commentaires_show', array('id' => $commentaire->getId()));
         }

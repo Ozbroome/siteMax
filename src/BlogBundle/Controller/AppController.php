@@ -31,14 +31,14 @@ class AppController extends Controller
         ));
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Refill the fields in case the form is not valid.
-
-
-            // Send mail
-            $this->get('app.email')->sendEmail($form->getData());
-            // Everything OK, redirect to wherever you want ! :
-            return $this->redirectToRoute('blog_app_index');
-
+            $decode = $this->get('app.recaptcha')->verifCaptcha();
+            if($decode['success'] == true){
+                $this->get('app.email')->sendEmail($form->getData());
+            }
+            else {
+                $request->getSession()->getFlashBag()->add('Erreur', 'Vous devez cocher la case "je ne suis pas un robot" pour envoyer un message.');
+            }
+            return $this->redirectToRoute('accueil');
         }
         return $this->render('index.html.twig', [
             'projets' => $projets,
@@ -65,7 +65,7 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/projet/last")
+     * @Route("/projet/last", name="projet_last")
      */
     public function lastAction(Request $request)
     {
@@ -75,7 +75,18 @@ class AppController extends Controller
         $newCommentaire = new Commentaires();
         $form = $this->createForm('BlogBundle\Form\CommentairesType', $newCommentaire);
         $form->handleRequest($request);
-
+        if ($form->isSubmitted() && $form->isValid()) {
+            $decode = $this->get('app.recaptcha')->verifCaptcha();
+            if($decode['success'] == true){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($newCommentaire);
+                $em->flush($newCommentaire);
+            }
+            else {
+                $request->getSession()->getFlashBag()->add('Erreur', 'Vous devez cocher la case "je ne suis pas un robot" avant de valider un commentaire.');
+            }
+            return $this->redirectToRoute('projet_last');
+        }
         return $this->render(':projet:last.html.twig', [
            'articles' => $articles,
             'projets' => $projets,
@@ -94,25 +105,24 @@ class AppController extends Controller
         $commentaires = $this->getDoctrine()->getRepository('BlogBundle:Commentaires')->findAll();
         $articles = $this->getDoctrine()->getRepository('BlogBundle:Articles')->findByCategorie($idCate);
         $categories = $this->getDoctrine()->getRepository('BlogBundle:Categories')->findByProjet($idProjet);
-
         $newCommentaire = new Commentaires();
         $form = $this->createForm('BlogBundle\Form\CommentairesType', $newCommentaire);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($newCommentaire);
-            $em->flush($newCommentaire);
-
-            return $this->redirectToRoute('projet_categorie',[
+            $decode = $this->get('app.recaptcha')->verifCaptcha();
+            if($decode['success'] == true){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($newCommentaire);
+                $em->flush($newCommentaire);
+            }
+            else {
+                $request->getSession()->getFlashBag()->add('Erreur', 'Vous devez cocher la case "je ne suis pas un robot" avant de valider un commentaire.');
+            }
+            return $this->redirectToRoute('projet_categorie_articles',[
                'idProjet' => $categories[0]->getProjet(),
                 'idCate' => $categories[0]->getId(),
             ]);
-
         }
-
-
-
         return $this->render(':projet:categorie.html.twig', [
             'articles' => $articles,
             'categories' => $categories,
@@ -120,7 +130,6 @@ class AppController extends Controller
             'newCommentaire' => $newCommentaire,
             'projets' => $projets,
             'form' => $form->createView(),
-
         ]);
 
     }

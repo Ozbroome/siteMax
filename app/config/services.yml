@@ -17,3 +17,7 @@ services:
             - "@mailer"
             - "@twig"
             - %mailer_user%
+
+     app.recaptcha:
+        class: BlogBundle\Services\Recaptcha
+        arguments: ['%clef_recaptcha%']

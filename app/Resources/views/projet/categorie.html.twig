@@ -41,7 +41,8 @@
                 <div id="form-com" class="form-com">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <input type="submit" value="Create" />
+                    <div class="g-recaptcha" data-sitekey="6LexZRoUAAAAAL-9h-hEsyRhARpmlTei6oW0razC"></div>
+                    <input type="submit" value="Commenter" />
                     {{ form_end(form) }}
                 </div>
             </div>
@@ -70,16 +71,14 @@
             ajoutForm(valueId);
 
             $('.btn-ajoutCom').on('click',function(e){
+                $('.bloc-commentaire').slideUp();
                 var bloc = $(this).next('.bloc-commentaire');
-
                 bloc.toggle();
-
                 valueId = bloc.attr('id');
                 ajoutForm(valueId);
             });
 
             function ajoutForm(valueId){
-
                 valueId = parseInt(valueId);
                 $('select').each(function (i) {
                     $("#blogbundle_commentaires_article > option[selected = 'selected']").attr('selected',false);

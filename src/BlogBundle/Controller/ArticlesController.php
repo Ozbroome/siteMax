@@ -70,7 +70,6 @@ class ArticlesController extends Controller
         $form = $this->createForm('BlogBundle\Form\ArticlesType', $article);
         $form->handleRequest($request);
         $directory = $this->getParameter('img_directory');
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.file_uploader')->testFile($directory,$article);
             $file = $article->getImageURL();
@@ -136,7 +135,6 @@ class ArticlesController extends Controller
                 $article->setImageURL($fileName);
             }
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('admin_projet_categorie', array('idProjet' => $idProjet,'idCate' => $idCate));
         }
         return $this->render('admin/articles/edit.html.twig', array(

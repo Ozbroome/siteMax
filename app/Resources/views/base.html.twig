@@ -11,10 +11,13 @@
         <!--[if IE]>
         <link href="{{ asset('stylesheets/ie.css') }} " media="screen, projection" rel="stylesheet" type="text/css" />
         <![endif]-->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         {% block bootstrap %}{% endblock %}
+        {% block script %}{% endblock %}
     </head>
     <body>
     <div class="container">
+
         <header>
 
             <!-- Navigation
@@ -27,7 +30,7 @@
     <div class="nav-right">
         <ul class="navigation-liens-droite">
             <li><a href="/">Accueil</a></li>
-            <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
+            <li><a href="{{ path('projet_last') }}">Actualités</a></li>
             <li><a href="#">Projets</a>
                 <ul class ="sous-menu">
                     {% for projet in projets %}
@@ -35,7 +38,6 @@
                     {% endfor %}
                 </ul>
             </li>
-            <li><a href="#">Contact</a></li>
         </ul>
         <div id="navigation-burger" class="navigation-burger">
              <span></span>
@@ -44,18 +46,28 @@
     <div class="navigation-mobile">
         <ul class="navigation-liens-mobile">
             <li><a href="/">Accueil</a></li>
-            <li><a href="{{ path('blog_app_last') }}">Actualités</a></li>
+            <li><a href="{{ path('projet_last') }}">Actualités</a></li>
             <li>
                     {% for projet in projets %}
                         <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>
                     {% endfor %}
 
             </li>
-            <li><a href="#">Contact</a></li>
         </ul>
     </div>
 </nav>
             {% endblock %}
+            <div id="alert">
+                {% for key, flash in app.session.flashBag.all %}
+                    {% for flashMessage in flash %}
+                        <div class="alert alert-{{ key }} alert-dismissible" role="{{ key }}">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
         </header>
             {% block body %}{% endblock %}
         <footer>
@@ -63,11 +75,12 @@
 <p>Copyright © 2017 Maxime Raguideau. All rights reserved.</p>
             </div>
         </footer>
+
         <script
                 src="https://code.jquery.com/jquery-3.1.1.min.js"
                 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
                 crossorigin="anonymous"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script type="text/javascript">
             $(function () {
                 var nav = $('.navigation-mobile')
