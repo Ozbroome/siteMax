@@ -29,9 +29,9 @@
     </div>
     <div class="nav-right">
         <ul class="navigation-liens-droite">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="{{ path('projet_last') }}">Actualités</a></li>
-            <li><a href="#">Projets</a>
+            <li><a id="accueil" href="/">Accueil</a></li>
+            <li><a id="actualite" href="{{ path('projet_last') }}">Actualités</a></li>
+            <li><a id ="projet" href="#">Projets</a>
                 <ul class ="sous-menu">
                     {% for projet in projets %}
                     <li><a href="{{ path('projet_cate', { 'idProjet': projet.id }) }}">{{ projet.titreMenu }}</a></li>

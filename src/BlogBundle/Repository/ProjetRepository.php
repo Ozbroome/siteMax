@@ -11,8 +11,7 @@ namespace BlogBundle\Repository;
 class ProjetRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getExtraitProjet($html){
-        $extrait = '<p>' . substr($html, 0, 700) . '...</p>';
-        $extrait .= '<p>Voir la suite</p>';
+        $extrait = '<p>' . substr($html, 0, 700) . '... <strong>Voir la suite</strong></p>';
         return $extrait;
     }
 }

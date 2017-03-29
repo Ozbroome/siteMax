@@ -34,7 +34,7 @@ class FileUploader
         return $this->targetDir;
     }
 
-    public function testFile($directory,Projet $projet){
+    public function testFile($directory,$projet){
 
         if ($projet->getImageURL() !== '' && null !== ($projet->getImageURL())) {
 

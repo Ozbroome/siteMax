@@ -71,19 +71,16 @@ class ArticlesController extends Controller
         $form->handleRequest($request);
         $directory = $this->getParameter('img_directory');
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->get('app.file_uploader')->testFile($directory,$article);
             $file = $article->getImageURL();
-            if($file !== '') {
+            if(null !== $file) {
                 $fileName = $this->get('app.file_uploader')->upload($file);
                 $article->setImageURL($fileName);
             }
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush($article);
-
             return $this->redirectToRoute('admin_projet_categorie', array('idProjet' => $idProjet,'idCate' => $idCate));
         }
-
         return $this->render('admin/articles/new.html.twig', array(
             'article' => $article,
             'form' => $form->createView(),

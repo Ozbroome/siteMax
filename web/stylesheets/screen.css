@@ -1108,6 +1108,11 @@ body {
   position: relative;
 }
 
+/* line 37, ../sass/import/_global.scss */
+strong {
+  font-weight: bold;
+}
+
 /* line 4, ../sass/import/_header.scss */
 header {
   background-color: white;
@@ -1312,44 +1317,57 @@ header .navigation-burger span:after {
     width: 120px;
   }
   /* line 170, ../sass/import/_header.scss */
-  .navigation .nav-right a:hover, .navigation .nav-right a:focus {
+  .navigation .nav-right a:hover {
     text-decoration: none;
     background-color: #44e1ff;
     border-radius: 25px;
     color: white;
     cursor: pointer;
   }
-  /* line 178, ../sass/import/_header.scss */
+  /* line 177, ../sass/import/_header.scss */
+  .navigation .nav-right a:focus, .navigation .nav-right a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+  /* line 182, ../sass/import/_header.scss */
+  .navigation .nav-right a.active {
+    text-decoration: none;
+    background-color: #44e1ff;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+  }
+  /* line 189, ../sass/import/_header.scss */
   .navigation .nav-right .sous-menu {
     display: none;
     position: absolute;
   }
-  /* line 181, ../sass/import/_header.scss */
+  /* line 192, ../sass/import/_header.scss */
   .navigation .nav-right .sous-menu li {
     display: block;
   }
-  /* line 183, ../sass/import/_header.scss */
+  /* line 194, ../sass/import/_header.scss */
   .navigation .nav-right .sous-menu li a {
     background: white;
     border-radius: 25px;
     cursor: pointer;
   }
-  /* line 187, ../sass/import/_header.scss */
+  /* line 198, ../sass/import/_header.scss */
   .navigation .nav-right .sous-menu li a:hover {
     background-color: #44e1ff;
     color: white;
   }
 
-  /* line 198, ../sass/import/_header.scss */
+  /* line 209, ../sass/import/_header.scss */
   .carouss .black-bandeau {
     height: 200px;
   }
-  /* line 200, ../sass/import/_header.scss */
+  /* line 211, ../sass/import/_header.scss */
   .carouss .black-bandeau p, .carouss .black-bandeau h1 {
     line-height: 200px;
     font-size: 20px;
   }
-  /* line 204, ../sass/import/_header.scss */
+  /* line 215, ../sass/import/_header.scss */
   .carouss .black-bandeau p {
     padding-top: 0;
     padding-bottom: 0;
@@ -1540,6 +1558,14 @@ header .navigation-burger span:after {
 
 @media (min-width: 1000px) {
   /* line 141, ../sass/import/_index.scss */
+  .content-index i {
+    margin-right: 10px;
+  }
+  /* line 143, ../sass/import/_index.scss */
+  .content-index i img {
+    vertical-align: baseline;
+  }
+  /* line 147, ../sass/import/_index.scss */
   .content-index .projets {
     padding: 80px;
     /* flip the pane when hovered */
@@ -1548,11 +1574,13 @@ header .navigation-burger span:after {
     /* front pane, placed above back */
     /* back, initially hidden pane */
   }
-  /* line 143, ../sass/import/_index.scss */
+  /* line 149, ../sass/import/_index.scss */
   .content-index .projets .flip-container {
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   /* line 12, ../sass/import/susy/output/support/_clearfix.scss */
   .content-index .projets .flip-container:after {
@@ -1560,11 +1588,11 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 148, ../sass/import/_index.scss */
+  /* line 156, ../sass/import/_index.scss */
   .content-index .projets .flip-container:hover .flipper, .content-index .projets .flip-container.hover .flipper {
     transform: rotateY(180deg);
   }
-  /* line 152, ../sass/import/_index.scss */
+  /* line 160, ../sass/import/_index.scss */
   .content-index .projets .flip-container, .content-index .projets .front, .content-index .projets .back {
     width: 48.33333%;
     float: left;
@@ -1572,14 +1600,14 @@ header .navigation-burger span:after {
     margin-right: 0.83333%;
     height: 400px;
   }
-  /* line 158, ../sass/import/_index.scss */
+  /* line 166, ../sass/import/_index.scss */
   .content-index .projets .flipper {
     width: 100%;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
   }
-  /* line 167, ../sass/import/_index.scss */
+  /* line 175, ../sass/import/_index.scss */
   .content-index .projets .front, .content-index .projets .back {
     width: 100%;
     backface-visibility: hidden;
@@ -1588,27 +1616,27 @@ header .navigation-burger span:after {
     top: 0;
     left: 0;
   }
-  /* line 177, ../sass/import/_index.scss */
+  /* line 185, ../sass/import/_index.scss */
   .content-index .projets .front {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
   }
-  /* line 184, ../sass/import/_index.scss */
+  /* line 192, ../sass/import/_index.scss */
   .content-index .projets .back {
     line-height: 400px;
     transform: rotateY(180deg);
     background: white;
     padding: 15px;
   }
-  /* line 186, ../sass/import/_index.scss */
+  /* line 194, ../sass/import/_index.scss */
   .content-index .projets .back p {
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
     vertical-align: middle;
   }
-  /* line 198, ../sass/import/_index.scss */
+  /* line 206, ../sass/import/_index.scss */
   .content-index .presentation {
     display: block;
     max-width: 1160px;
@@ -1627,7 +1655,7 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 207, ../sass/import/_index.scss */
+  /* line 215, ../sass/import/_index.scss */
   .content-index .presentation article {
     text-align: justify;
     display: inline-block;
@@ -1638,19 +1666,23 @@ header .navigation-burger span:after {
     padding: 80px 30px;
     color: #82868f;
   }
-  /* line 215, ../sass/import/_index.scss */
+  /* line 223, ../sass/import/_index.scss */
   .content-index .presentation article h2 {
     padding: 15px 0;
     font-size: 20px;
     color: black;
   }
-  /* line 224, ../sass/import/_index.scss */
+  /* line 232, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
     width: 48.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%;
     z-index: 3;
+  }
+  /* line 235, ../sass/import/_index.scss */
+  .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
+    font-size: 25px;
   }
 }
 /* line 3, ../sass/import/_projet.scss */
@@ -2049,8 +2081,9 @@ table td {
 .content-last .section .article img {
   margin: auto;
   max-width: 80%;
+  max-height: 50vh;
 }
-/* line 26, ../sass/import/_last.scss */
+/* line 27, ../sass/import/_last.scss */
 .content-last .section .article p {
   text-align: justify;
   padding-top: 30px;

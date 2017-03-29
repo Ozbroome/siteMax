@@ -138,10 +138,18 @@
 
 @media (min-width: 1000px) {
   .content-index{
+    i{
+      margin-right: 10px;
+      img{
+        vertical-align: baseline;
+      }
+    }
     .projets{
       padding: 80px;
     .flip-container{
       @include container();
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
       /* flip the pane when hovered */
@@ -224,6 +232,9 @@
         .contact,.partenaires{
           @include span(6 of 12);
           z-index: 3;
+          h2{
+            font-size: 25px;
+          }
         }
       }
     }
