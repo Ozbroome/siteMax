@@ -1625,18 +1625,19 @@ header .navigation-burger span:after {
   /* line 192, ../sass/import/_index.scss */
   .content-index .projets .back {
     line-height: 400px;
+    height: 400px;
     transform: rotateY(180deg);
     background: white;
     padding: 15px;
   }
-  /* line 194, ../sass/import/_index.scss */
+  /* line 195, ../sass/import/_index.scss */
   .content-index .projets .back p {
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
     vertical-align: middle;
   }
-  /* line 206, ../sass/import/_index.scss */
+  /* line 207, ../sass/import/_index.scss */
   .content-index .presentation {
     display: block;
     max-width: 1160px;
@@ -1655,7 +1656,7 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 215, ../sass/import/_index.scss */
+  /* line 216, ../sass/import/_index.scss */
   .content-index .presentation article {
     text-align: justify;
     display: inline-block;
@@ -1666,13 +1667,13 @@ header .navigation-burger span:after {
     padding: 80px 30px;
     color: #82868f;
   }
-  /* line 223, ../sass/import/_index.scss */
+  /* line 224, ../sass/import/_index.scss */
   .content-index .presentation article h2 {
     padding: 15px 0;
     font-size: 20px;
     color: black;
   }
-  /* line 232, ../sass/import/_index.scss */
+  /* line 233, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
     width: 48.33333%;
     float: left;
@@ -1680,7 +1681,7 @@ header .navigation-burger span:after {
     margin-right: 0.83333%;
     z-index: 3;
   }
-  /* line 235, ../sass/import/_index.scss */
+  /* line 236, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
     font-size: 25px;
   }

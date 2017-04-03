@@ -18,9 +18,9 @@ class AppController extends Controller
         $projets = $this->getDoctrine()->getRepository('BlogBundle:Projet')->findAll();
         // replace this example code with whatever you need
         foreach ($projets as $projet){
-            $contenu = $projet->getContenu();
-            $html = $this->getDoctrine()->getRepository('BlogBundle:Projet')->getExtraitProjet($contenu);
-            $projet->setContenu($html);
+            $resume = $projet->getResume();
+            $html = $this->getDoctrine()->getRepository('BlogBundle:Projet')->getExtraitProjet($resume);
+            $projet->setResume($html);
     }
         $form = $this->createForm('BlogBundle\Form\ContactType',null,array(
             // To set the action use $this->generateUrl('route_identifier')

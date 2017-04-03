@@ -46,13 +46,20 @@ class Projet
     /**
      * @var string
      *
+     * @ORM\Column(name="resume", type="text", nullable=true)
+     */
+    private $resume;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Assert\File(
      *     maxSize="8000k",
      *     mimeTypes={"image/jpeg"}
@@ -169,5 +176,29 @@ class Projet
     public function getImageURL()
     {
         return $this->imageURL;
+    }
+
+    /**
+     * Set titreMenu
+     *
+     * @param string $titreMenu
+     *
+     * @return Projet
+     */
+    public function setTitreMenu($titreMenu)
+    {
+        $this->titreMenu = $titreMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get titreMenu
+     *
+     * @return string
+     */
+    public function getTitreMenu()
+    {
+        return $this->titreMenu;
     }
 }

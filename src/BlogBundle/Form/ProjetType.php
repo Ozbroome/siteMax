@@ -20,8 +20,7 @@ class ProjetType extends AbstractType
             ->add('titreMenu')
             ->add('contenu', TextareaType::class , array('required'=>false, 'attr' =>   array( 'class' =>'tinymce'
                 )))
-
-
+            ->add('resume')
             ->add('image')
             ->add('imageURL', FileType::class,[
                 'required'=> false
