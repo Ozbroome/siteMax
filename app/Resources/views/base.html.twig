@@ -5,7 +5,9 @@
         <title>{% block title %}Maxime Raguideau{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <meta name="viewport" content="width=device-width"/>
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta property="og:url" content="http://www.maximeraguideau.com"/>
+        <meta property="og:title" content="maximeraguideau.com : Du 10km à l'Ironman, de la balade à la traversée des Pyrénées à pied, il n'y a finalement qu'un pas... ou deux." />
+        <link rel="icon" type="image/x-icon" href="{{ asset('max.png') }}" />
         <link href="{{ asset('stylesheets/screen.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
         <link href="{{ asset('stylesheets/print.css') }}" media="print" rel="stylesheet" type="text/css" />
         <!--[if IE]>

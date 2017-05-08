@@ -1,6 +1,29 @@
 .content-index{
   .presentation{
-    display: none;
+    display: block;
+    @include container();
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+    background: white;
+    padding-bottom: 40px;
+    z-index:8;
+    article:not(:first-child) {
+      display: none;
+    }
+    article {
+      display: block;
+      text-align: justify;
+      padding: 5px 5px;
+      color: $text-gris;
+
+      h2{
+        padding: 15px 0;
+        font-size: 20px;
+        color:black;
+      }
+
+    }
   }
   .projets{
     background: $bloc-gris-clair;
@@ -193,15 +216,28 @@
           line-height: 400px;
         height: 400px;
           p{
+            position: relative;
             display: inline-block;
             font-size: 16px;
             line-height: 20px;
             vertical-align: middle;
+            z-index: 10;
           }
 
         transform: rotateY(180deg);
         background: white;
         padding: 15px;
+        &:after{
+          content:'';
+          display: block;
+          background: rgba(255, 255, 255, 0.7);
+          position: absolute;
+          top:0;
+          left:0;
+          right: 0;
+          bottom:0;
+          z-index: 1;
+        }
       }
     }
     .presentation{
@@ -213,6 +249,9 @@
       background: white;
       padding-bottom: 40px;
       z-index:8;
+      article:not(:first-child){
+        display: inline-block;
+      }
       article{
 
         text-align: justify;

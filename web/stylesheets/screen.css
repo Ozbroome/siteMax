@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -1084,9 +1084,9 @@ a:hover {
 
 /* line 18, ../sass/import/_global.scss */
 html {
-  background: white;
   position: relative;
   height: 100%;
+  font-family: "Calibri";
 }
 
 /* line 23, ../sass/import/_global.scss */
@@ -1111,6 +1111,21 @@ body {
 /* line 37, ../sass/import/_global.scss */
 strong {
   font-weight: bold;
+}
+
+/* line 40, ../sass/import/_global.scss */
+table {
+  width: 100% !important;
+}
+
+/* line 43, ../sass/import/_global.scss */
+iframe {
+  max-width: 100%;
+}
+
+/* line 46, ../sass/import/_global.scss */
+article {
+  overflow: auto;
 }
 
 /* line 4, ../sass/import/_header.scss */
@@ -1375,9 +1390,41 @@ header .navigation-burger span:after {
 }
 /* line 2, ../sass/import/_index.scss */
 .content-index .presentation {
+  display: block;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding-bottom: 40px;
+  z-index: 8;
+}
+/* line 12, ../sass/import/susy/output/support/_clearfix.scss */
+.content-index .presentation:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 11, ../sass/import/_index.scss */
+.content-index .presentation article:not(:first-child) {
   display: none;
 }
-/* line 5, ../sass/import/_index.scss */
+/* line 14, ../sass/import/_index.scss */
+.content-index .presentation article {
+  display: block;
+  text-align: justify;
+  padding: 5px 5px;
+  color: #82868f;
+}
+/* line 20, ../sass/import/_index.scss */
+.content-index .presentation article h2 {
+  padding: 15px 0;
+  font-size: 20px;
+  color: black;
+}
+/* line 28, ../sass/import/_index.scss */
 .content-index .projets {
   background: #f2f2f2;
   padding: 10px;
@@ -1385,7 +1432,7 @@ header .navigation-burger span:after {
   margin: auto;
   position: relative;
 }
-/* line 11, ../sass/import/_index.scss */
+/* line 34, ../sass/import/_index.scss */
 .content-index .projets:before {
   content: '';
   display: block;
@@ -1404,7 +1451,7 @@ header .navigation-burger span:after {
   transform: skewY(2deg);
   z-index: 1;
 }
-/* line 25, ../sass/import/_index.scss */
+/* line 48, ../sass/import/_index.scss */
 .content-index .projets:after {
   content: '';
   display: block;
@@ -1423,7 +1470,7 @@ header .navigation-burger span:after {
   transform: skewY(-2deg);
   z-index: 2;
 }
-/* line 38, ../sass/import/_index.scss */
+/* line 61, ../sass/import/_index.scss */
 .content-index .projets .projets-list {
   max-width: 1160px;
   margin-left: auto;
@@ -1438,11 +1485,11 @@ header .navigation-burger span:after {
   display: block;
   clear: both;
 }
-/* line 44, ../sass/import/_index.scss */
+/* line 67, ../sass/import/_index.scss */
 .content-index .projets .back {
   display: none;
 }
-/* line 47, ../sass/import/_index.scss */
+/* line 70, ../sass/import/_index.scss */
 .content-index .projets .case-projet {
   width: 98.33333%;
   float: left;
@@ -1453,7 +1500,7 @@ header .navigation-burger span:after {
   margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  /* line 47, ../sass/import/_index.scss */
+  /* line 70, ../sass/import/_index.scss */
   .content-index .projets .case-projet {
     width: 48.33333%;
     float: left;
@@ -1461,12 +1508,12 @@ header .navigation-burger span:after {
     margin-right: 0.83333%;
   }
 }
-/* line 56, ../sass/import/_index.scss */
+/* line 79, ../sass/import/_index.scss */
 .content-index .projets .case-projet img {
   width: 100%;
   height: 300px;
 }
-/* line 61, ../sass/import/_index.scss */
+/* line 84, ../sass/import/_index.scss */
 .content-index .projets .case-projet .legende-projet {
   margin-top: -2px;
   background: white;
@@ -1476,7 +1523,7 @@ header .navigation-burger span:after {
   font-size: 20px;
   color: #82868f;
 }
-/* line 73, ../sass/import/_index.scss */
+/* line 96, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires {
   background: #4c4c4c;
   padding-top: 80px;
@@ -1484,7 +1531,7 @@ header .navigation-burger span:after {
   text-align: center;
   position: relative;
 }
-/* line 81, ../sass/import/_index.scss */
+/* line 104, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires {
   max-width: 1160px;
   margin-left: auto;
@@ -1496,7 +1543,7 @@ header .navigation-burger span:after {
   display: block;
   clear: both;
 }
-/* line 83, ../sass/import/_index.scss */
+/* line 106, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   position: relative;
   display: inline-block;
@@ -1508,40 +1555,40 @@ header .navigation-burger span:after {
   z-index: 3;
   padding: 5px;
 }
-/* line 90, ../sass/import/_index.scss */
+/* line 113, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
   color: white;
   font-size: 20px;
 }
-/* line 95, ../sass/import/_index.scss */
+/* line 118, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
   height: 100%;
 }
-/* line 98, ../sass/import/_index.scss */
+/* line 121, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .partenaires img {
   margin-top: 30px;
   max-width: 100%;
   max-height: 300px;
 }
-/* line 105, ../sass/import/_index.scss */
+/* line 128, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form {
   width: 100%;
   text-align: left;
 }
-/* line 108, ../sass/import/_index.scss */
+/* line 131, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input {
   width: 100%;
   padding: 10px;
   margin-top: 30px;
   color: #82868f;
 }
-/* line 114, ../sass/import/_index.scss */
+/* line 137, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form textarea {
   margin-top: 30px;
   width: 100%;
   padding: 10px;
 }
-/* line 119, ../sass/import/_index.scss */
+/* line 142, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit'] {
   width: 100px;
   background-color: #44e1ff;
@@ -1551,21 +1598,21 @@ header .navigation-burger span:after {
   cursor: pointer;
   float: right;
 }
-/* line 127, ../sass/import/_index.scss */
+/* line 150, ../sass/import/_index.scss */
 .content-index .bloc-contact-partenaires .contact-partenaires .contact form input[type='submit']:hover {
   background-color: #00badd;
 }
 
 @media (min-width: 1000px) {
-  /* line 141, ../sass/import/_index.scss */
+  /* line 164, ../sass/import/_index.scss */
   .content-index i {
     margin-right: 10px;
   }
-  /* line 143, ../sass/import/_index.scss */
+  /* line 166, ../sass/import/_index.scss */
   .content-index i img {
     vertical-align: baseline;
   }
-  /* line 147, ../sass/import/_index.scss */
+  /* line 170, ../sass/import/_index.scss */
   .content-index .projets {
     padding: 80px;
     /* flip the pane when hovered */
@@ -1574,7 +1621,7 @@ header .navigation-burger span:after {
     /* front pane, placed above back */
     /* back, initially hidden pane */
   }
-  /* line 149, ../sass/import/_index.scss */
+  /* line 172, ../sass/import/_index.scss */
   .content-index .projets .flip-container {
     max-width: 1160px;
     margin-left: auto;
@@ -1588,11 +1635,11 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 156, ../sass/import/_index.scss */
+  /* line 179, ../sass/import/_index.scss */
   .content-index .projets .flip-container:hover .flipper, .content-index .projets .flip-container.hover .flipper {
     transform: rotateY(180deg);
   }
-  /* line 160, ../sass/import/_index.scss */
+  /* line 183, ../sass/import/_index.scss */
   .content-index .projets .flip-container, .content-index .projets .front, .content-index .projets .back {
     width: 48.33333%;
     float: left;
@@ -1600,14 +1647,14 @@ header .navigation-burger span:after {
     margin-right: 0.83333%;
     height: 400px;
   }
-  /* line 166, ../sass/import/_index.scss */
+  /* line 189, ../sass/import/_index.scss */
   .content-index .projets .flipper {
     width: 100%;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
   }
-  /* line 175, ../sass/import/_index.scss */
+  /* line 198, ../sass/import/_index.scss */
   .content-index .projets .front, .content-index .projets .back {
     width: 100%;
     backface-visibility: hidden;
@@ -1616,13 +1663,13 @@ header .navigation-burger span:after {
     top: 0;
     left: 0;
   }
-  /* line 185, ../sass/import/_index.scss */
+  /* line 208, ../sass/import/_index.scss */
   .content-index .projets .front {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
   }
-  /* line 192, ../sass/import/_index.scss */
+  /* line 215, ../sass/import/_index.scss */
   .content-index .projets .back {
     line-height: 400px;
     height: 400px;
@@ -1630,14 +1677,28 @@ header .navigation-burger span:after {
     background: white;
     padding: 15px;
   }
-  /* line 195, ../sass/import/_index.scss */
+  /* line 218, ../sass/import/_index.scss */
   .content-index .projets .back p {
+    position: relative;
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
     vertical-align: middle;
+    z-index: 10;
   }
-  /* line 207, ../sass/import/_index.scss */
+  /* line 230, ../sass/import/_index.scss */
+  .content-index .projets .back:after {
+    content: '';
+    display: block;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  /* line 243, ../sass/import/_index.scss */
   .content-index .presentation {
     display: block;
     max-width: 1160px;
@@ -1656,7 +1717,11 @@ header .navigation-burger span:after {
     display: block;
     clear: both;
   }
-  /* line 216, ../sass/import/_index.scss */
+  /* line 252, ../sass/import/_index.scss */
+  .content-index .presentation article:not(:first-child) {
+    display: inline-block;
+  }
+  /* line 255, ../sass/import/_index.scss */
   .content-index .presentation article {
     text-align: justify;
     display: inline-block;
@@ -1667,13 +1732,13 @@ header .navigation-burger span:after {
     padding: 80px 30px;
     color: #82868f;
   }
-  /* line 224, ../sass/import/_index.scss */
+  /* line 263, ../sass/import/_index.scss */
   .content-index .presentation article h2 {
     padding: 15px 0;
     font-size: 20px;
     color: black;
   }
-  /* line 233, ../sass/import/_index.scss */
+  /* line 272, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires {
     width: 48.33333%;
     float: left;
@@ -1681,7 +1746,7 @@ header .navigation-burger span:after {
     margin-right: 0.83333%;
     z-index: 3;
   }
-  /* line 236, ../sass/import/_index.scss */
+  /* line 275, ../sass/import/_index.scss */
   .content-index .bloc-contact-partenaires .contact-partenaires .contact h2, .content-index .bloc-contact-partenaires .contact-partenaires .partenaires h2 {
     font-size: 25px;
   }

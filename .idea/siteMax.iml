@@ -6,8 +6,7 @@
     <option name="compassSupportEnabled" value="true" />
     <option name="importPaths">
       <list>
-        <option value="/usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets" />
-        <option value="/usr/local/lib/ruby/gems/2.4.0/gems/susy-3.0.0.alpha.5/sass" />
+        <option value="/Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets" />
       </list>
     </option>
   </component>
@@ -53,16 +52,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="PHP Runtime" type="php">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
-        </CLASSES>
-        <SOURCES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
@@ -74,7 +63,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="compass-library" level="project" />
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
@@ -155,5 +143,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="compass-library" level="project" />
   </component>
 </module>

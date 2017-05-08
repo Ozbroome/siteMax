@@ -5,24 +5,20 @@
             <img src="{{ asset('img/1.jpg') }}" alt="">
             <div class="black-bandeau">
                 <p>
-                    “Du 10km à l'Ironman, de la balade à la traversée des Pyrennées à pieds, il n'y a finalement qu'un pas... ou deux.”</p>
+                    « Du 10km à l'Ironman, de la balade à la traversée des Pyrénées à pied, il n'y a finalement qu'un pas... ou deux. »</p>
             </div>
         </div>
         <div class="presentation">
             <article class="presentation-article">
                 <h2><i><img src="{{ asset('icone/User.png') }}" alt=""></i>   A propos de moi</h2>
-                <p>Le physique de Brad et le génie d'Albert, je suis né à Copenhague, d'une mère autrichienne et d'un père canadien. A 24 ans, j'ai fait mon premier tour du monde, j'en suis à mon troisième. J'ai appris la guitare au Costa Rica, depuis j'emballe à tour de bras. J'ai 943 amis facebook, je vis en coloc', je fais mes courses à vélo au bio du quartier.
-                    Comment? J'ai une vie de merde?...
-                    Bon, j'ai plus le physique d'Albert que le génie d'Einstein, je suis de la cuvée 85, j'ai des lunettes, je perds mes cheveux, je suis marié, 3 enfants; 3 garçons, alors j'ai rapidement abandonné le vélo pour les courses. On vit dans une petite maison en campagne, j'aime jouer au Légo avec mes enfants, bricoler, pisser face au soleil, écouter Rob Dougan les soirs d'orage et regarder H les autres soirs. Bref, je suis un homme heureux. Je m'appel Maxime. Bonjour.</p>
+                <p>Le physique de Brad et le génie d'Albert, je suis né à Copenhague, d'une mère autrichienne et d'un père canadien. A 24 ans, j'ai fait mon premier tour du monde, j'en suis à mon troisième. J'ai appris la guitare au Costa Rica, depuis j'emballe à tour de bras. J'ai 943 amis facebook, je vis en coloc', je fais mes courses à vélo au bio du quartier. Comment ? J'ai une vie de merde ?... Bon, j'ai plus le physique d'Albert que le génie d'Einstein, je suis de la cuvée 85, j'ai des lunettes, je perds mes cheveux, je suis marié, 3 enfants, on fait les courses en auto, on vit dans une petite maison en campagne, j'aime jouer au Légo, bricoler, pisser face au soleil, écouter Rob Dougan les soirs d'orage et regarder H les autres soirs. Bref, je suis un homme heureux. Je m'appelle Maxime. Bonjour.</p>
             </article>
             <article class="presentation-article">
                 <h2><i><img src="{{ asset('icone/Bubble.png') }}" alt=""></i>   Pourquoi ce site</h2>
-                <p>Ma femme un jour m'a dit : "je veux bien que tu traverses les Pyrénées, seul pendant 30 jours, mais je veux pouvoir suivre à distance ta progression, parceque pour les assurances de la maison, il faut retrouver le corps. Je me suis donc orienté vers une balise satellite qui permets le suivi en temps réel sur Internet.
-                    Après je suis allé voir mon pote Éric, le geek, qui me dit: "pourquoi pas faire un blog avec ta carte, comme ça tout le monde pourrait​ te suivre! Pourquoi pas y mettre des photos ? L'idéal serait même que les gens puissent laisser un message! Il faut aussi un lien pour tes sponsors! Et le top du top, ce serait une rétrospective de ton IronCorsair. Mais pour monter un tel site, il te faudrait connaître un génie du web! Un mec comme moi! Alors ne m'appelle plus jamais le geek devant tout le monde."
-                    J'ai donc suivi ses conseils et son talent, et me voilà collé à un .com .</p>
+                <p>Ma femme un jour m'a dit : "je veux bien que tu traverses les Pyrénées, seul pendant 30 jours, mais je veux pouvoir suivre à distance ta progression, parce que pour les assurances de la maison, il faut retrouver le corps ! » J’ai donc investi dans une balise satellite qui permets le suivi en temps réel sur Internet. Après je suis allé voir mon pote Éric, le geek, qui m’a dit : « Pourquoi pas faire un blog avec ta carte, comme ça tout le monde pourrait​ te suivre ! Pourquoi pas y mettre des photos ? Il faut aussi un lien pour tes sponsors ! Et le top du top, ce serait une rétrospective de ton IronCorsair. Mais pour monter un tel site, il te faudrait connaître un génie du web… un mec comme moi ! » J'ai donc suivi ses conseils et son talent, et me voilà collé à un .com</p>
             </article>
             <article class="presentation-article">
-                <h2><i><img src="{{ asset('icone/Settings.png') }}" alt=""></i>   Ce que vous allez y trouver</h2>
+                <h2><i><img src="{{ asset('icone/Settings.png') }}" alt=""></i>   Ce que vous y trouverez</h2>
                 <p>Vous trouverez ici les projets, le l'IronCorsair à la HRP, des photos, des vidéos, des liens utiles, de modestes conseils, mais j'espère surtout que vous trouverez ici quelques cailloux qui vous aideront un jour, à bâtir vos plus grands rêves.</p>
             </article>
         </div>
@@ -34,11 +30,15 @@
                         <div class="flipper">
                     <div class="case-projet front">
                     <img src="{{ asset('img/'~projet.imageURL ) }}" alt="">
+                        {% set urlImage = asset('img/'~projet.imageURL ) %}
                     <div class="legende-projet">
                         <p>{{ projet.titre }}</p>
                     </div>
                 </div>
-                    <div class="case-projet back">
+                    <div class="case-projet back" style="
+                            background:url('{{ urlImage }}');
+                            background-size: cover;
+                            ">
                         <p>{{ projet.resume | raw }}</p>
                     </div>
                         </div>

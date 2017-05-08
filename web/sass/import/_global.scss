@@ -16,9 +16,9 @@ a{
 
 @include border-box-sizing();
 html{
-  background: white;
   position: relative;
   height: 100%;
+  font-family: "Calibri";
 }
 body{
 height: 100%;
@@ -36,4 +36,13 @@ min-height:100%;
 }
 strong{
   font-weight:bold;
+}
+table{
+  width: 100% !important;
+}
+iframe{
+  max-width:100%;
+}
+article{
+  overflow: auto;
 }
